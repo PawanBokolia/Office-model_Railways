@@ -5,13 +5,13 @@
     <parameter name="br" value="chrome"/>
     <parameter name="os" value="windows"/>
     <classes>
-      <class name="testCases.Megamenucheck">
+      <class name="testCases.TC006_WishListAddAndDelete">
         <methods>
-          <include name="test1"/>
+          <include name="WishListAddAndDelete"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- testCases.Megamenucheck -->
+      </class> <!-- testCases.TC006_WishListAddAndDelete -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

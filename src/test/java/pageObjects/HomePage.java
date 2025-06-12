@@ -57,7 +57,7 @@ public class HomePage extends BasePage{
 
 	
 	//menu 
-	@FindBy(css="a[class='mega first has-child dynamic-width style-tabs active']")
+	@FindBy(xpath="//a[@class='mega first has-child dynamic-width style-tabs']//span")
 	WebElement categoryScale;
 
 	@FindBy(linkText="Rolling Stock & Accessories")
@@ -145,7 +145,7 @@ public class HomePage extends BasePage{
 	
 	public void clickOnSubCategoryWagon()
 	{
-		act.moveToElement(aboutusBTN).click().perform();
+		act.moveToElement(subCategoryWagon).click().perform();
 	}
 	
 

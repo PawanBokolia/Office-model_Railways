@@ -8,13 +8,14 @@
     
 
     <classes>
-      <!--    	<class name="testCases.TC001_LoginAndLogOut"/>
-       			<class name="testCases.TC002_Newsletter"/> 		
-      			<class name="testCases.TC003_ContactUs"/>    
-      			<class name="testCases.TC003_ContactUs"/>   
-   			   <class name="testCases.TC004_AboutUs"/>  			-->
-       			<class name="testCases.Megamenucheck"/> 
-       			
+<!--
+  		<class name="testCases.TC001_LoginAndLogOut"/>
+   		<class name="testCases.TC002_Newsletter"/> 		
+  		<class name="testCases.TC003_ContactUs"/>    
+  		<class name="testCases.TC003_ContactUs"/>   
+		<class name="testCases.TC004_AboutUs"/>  						
+   		<class name="testCases.TC005_AddComapreAndDelete"/> 		-->
+       	<class name="testCases.TC006_WishListAddAndDelete"/>
        			
        			
        			
