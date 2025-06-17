@@ -31,8 +31,7 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//div[@class='panel header']//li[@data-label='or']//a")
 	WebElement signInbtn;
 
-	@FindBy(xpath="//div[@class='panel header']//button")
-	WebElement loginbtnmega;
+
 
 	@FindBy(xpath="//li[@class='customer-welcome active']//div[@class='customer-menu']//li[3]")
 	WebElement signOutbtn;
@@ -90,12 +89,7 @@ public class HomePage extends BasePage{
 	}
 
 
-	public String verifLogin()
-	{
-		loginbtnmega.click();
-		return loginbtnmega.getText();
 
-	}
 
 	public void clickOnSignOut()
 	{

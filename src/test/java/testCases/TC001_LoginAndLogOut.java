@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import pageObjects.HomePage;
 import pageObjects.LoginAndCreateAccPage;
+import pageObjects.MyAccPage;
 import testBase.BaseClass;
 
 public class TC001_LoginAndLogOut extends BaseClass{
@@ -22,8 +23,9 @@ public class TC001_LoginAndLogOut extends BaseClass{
 		lg.clickOnLoginBtn();
 
 		Thread.sleep(3000);
-
-		String text1 =	hp.verifLogin();
+		
+		MyAccPage mp =new MyAccPage(driver);
+		String text1 =	mp.verifLogin();
 		Assert.assertEquals(text1, "My Account");
 
 		hp.clickOnSignOut();

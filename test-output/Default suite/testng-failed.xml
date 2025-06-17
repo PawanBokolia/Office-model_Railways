@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC006_WishListAddAndDelete">
+      <class name="testCases.TC007_CreateAccount">
         <methods>
-          <include name="WishListAddAndDelete"/>
           <include name="tearDown"/>
+          <include name="CreateAccount"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- testCases.TC006_WishListAddAndDelete -->
+      </class> <!-- testCases.TC007_CreateAccount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
