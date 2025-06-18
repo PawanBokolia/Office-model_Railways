@@ -16,17 +16,17 @@ public class HomePage extends BasePage{
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Actions act = new Actions(driver);
-	
+
 
 	public HomePage(WebDriver driver)
 	{
 		super(driver);
 	}
-	
+
 	//cookies
 	@FindBy(css="button[id='btn-cookie-allow']")
 	WebElement cookies;
-	
+
 
 	@FindBy(xpath="//div[@class='panel header']//li[@data-label='or']//a")
 	WebElement loginsection;
@@ -54,17 +54,23 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//span[normalize-space()='About Us']")
 	WebElement aboutusBTN;
 
-	
+
 	//menu 
 	@FindBy(xpath="//a[@class='mega first has-child dynamic-width style-tabs']//span")
 	WebElement categoryScale;
 
 	@FindBy(linkText="Rolling Stock & Accessories")
 	WebElement subCategoryRolling;
-	
+
 	@FindBy(linkText="Wagon Loads & Containers")
 	WebElement subCategoryWagon;
-	
+
+	//mini cart
+	@FindBy(xpath="//a[@class='action showcart']")
+	WebElement minicartbtn;
+
+
+
 	//cookies
 	public void acceptCookies()
 	{
@@ -80,8 +86,8 @@ public class HomePage extends BasePage{
 			System.out.println(e.getMessage());
 		}
 	}
-	
-	
+
+
 	//login section pop up
 	public void clickOnSignInbtn()
 	{
@@ -123,21 +129,31 @@ public class HomePage extends BasePage{
 	{
 		js.executeScript("arguments[0].click();",aboutusBTN);
 	}
-	
+
 	public void moveOnCategoryScale()
 	{
 		act.moveToElement(categoryScale).perform();
 	}
-	
+
 	public void moveOnSubCategoryrolling()
 	{
 		act.moveToElement(subCategoryRolling).perform();
 	}
-	
+
 	public void clickOnSubCategoryWagon()
 	{
-		act.moveToElement(subCategoryWagon).click().perform();
+		js.executeScript("arguments[0].click();", subCategoryWagon);
 	}
-	
+
+	public void clickOnMiniCartBtn()
+	{
+		if(minicartbtn.isEnabled())
+		{
+			minicartbtn.click();	
+		}
+
+	}
+
+
 
 }

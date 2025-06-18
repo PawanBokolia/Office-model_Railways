@@ -5,20 +5,13 @@
     <parameter name="br" value="chrome"/>
     <parameter name="os" value="windows"/>
     <classes>
-      <class name="testCases.TC005_AddComapreAndDelete">
-        <methods>
-          <include name="tearDown"/>
-          <include name="test1"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- testCases.TC005_AddComapreAndDelete -->
-      <class name="testCases.TC002_Newsletter">
+      <class name="testCases.TC008_OrderLogin_via_Elavon">
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="Newsletter"/>
+          <include name="OrderLogin"/>
         </methods>
-      </class> <!-- testCases.TC002_Newsletter -->
+      </class> <!-- testCases.TC008_OrderLogin_via_Elavon -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
