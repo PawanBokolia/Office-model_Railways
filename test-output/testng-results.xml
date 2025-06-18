@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-18T19:07:16 IST" name="Suite" finished-at="2025-06-18T19:08:21 IST" duration-ms="65144">
+  <suite started-at="2025-06-18T19:30:10 IST" name="Suite" finished-at="2025-06-18T19:31:14 IST" duration-ms="63789">
     <groups>
     </groups>
-    <test started-at="2025-06-18T19:07:16 IST" name="Test" finished-at="2025-06-18T19:08:21 IST" duration-ms="65144">
+    <test started-at="2025-06-18T19:30:10 IST" name="Test" finished-at="2025-06-18T19:31:14 IST" duration-ms="63789">
       <class name="testCases.TC008_OrderLogin_via_Elavon">
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC008_OrderLogin_via_Elavon@5b239d7d]" started-at="2025-06-18T19:07:16 IST" name="setUp" finished-at="2025-06-18T19:07:33 IST" duration-ms="17169" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC008_OrderLogin_via_Elavon@5b239d7d]" started-at="2025-06-18T19:30:10 IST" name="setUp" finished-at="2025-06-18T19:30:27 IST" duration-ms="16603" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,11 +23,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="OrderLogin()[pri:0, instance:testCases.TC008_OrderLogin_via_Elavon@5b239d7d]" started-at="2025-06-18T19:07:33 IST" name="OrderLogin" finished-at="2025-06-18T19:08:21 IST" duration-ms="47651" status="PASS">
+        <test-method signature="OrderLogin()[pri:0, instance:testCases.TC008_OrderLogin_via_Elavon@5b239d7d]" started-at="2025-06-18T19:30:27 IST" name="OrderLogin" finished-at="2025-06-18T19:31:14 IST" duration-ms="46890" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OrderLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC008_OrderLogin_via_Elavon@5b239d7d]" started-at="2025-06-18T19:08:21 IST" name="tearDown" finished-at="2025-06-18T19:08:21 IST" duration-ms="282" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC008_OrderLogin_via_Elavon@5b239d7d]" started-at="2025-06-18T19:31:14 IST" name="tearDown" finished-at="2025-06-18T19:31:14 IST" duration-ms="247" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
