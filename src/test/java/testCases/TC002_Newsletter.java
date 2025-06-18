@@ -12,8 +12,9 @@ public class TC002_Newsletter extends BaseClass{
 	public void Newsletter() throws InterruptedException
 	{
 		try {
-			Thread.sleep(3000);
+			
 			HomePage hp = new HomePage(driver);
+			hp.acceptCookies();
 			hp.newsletterInput("pawan."+randomString()+"@gmail.com");
 
 			Thread.sleep(3000);
@@ -26,7 +27,7 @@ public class TC002_Newsletter extends BaseClass{
 		}
 		catch(Exception e )
 		{
-			System.out.println(e.getMessage());
+			e.printStackTrace();
 			Assert.assertTrue(false);
 		}
 

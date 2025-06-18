@@ -13,6 +13,7 @@ public class TC004_AboutUs extends BaseClass{
 	public void AboutUs() throws InterruptedException
 	{
 		HomePage hp = new HomePage(driver);
+		hp.acceptCookies();
 		hp.clickOnAboutUs();
 		
 		Thread.sleep(3000);
