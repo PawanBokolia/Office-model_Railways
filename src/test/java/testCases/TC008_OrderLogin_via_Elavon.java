@@ -34,7 +34,7 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass{
 		ProductDetailPage pd = new ProductDetailPage(driver);
 		pd.clickOnAddtoCartBtn();
 		
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		hp.clickOnMiniCartBtn();
 
 		CartPage cp = new CartPage(driver);
@@ -44,12 +44,14 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass{
 		
 		Thread.sleep(5000);
 		checkpg.emailInputFild();
+	
+		Thread.sleep(100000);
 		checkpg.passwordInputField("Pawanbokolia@95");
 		checkpg.clickOnLoginBtn();
 		
 //		checkpg.nameInputField();
 		
-		Thread.sleep(100000);
+	
 		}
 		catch(Exception e )
 		{
