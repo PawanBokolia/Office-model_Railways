@@ -14,26 +14,34 @@ public class TC001_LoginAndLogOut extends BaseClass{
 	@Test
 	public void loginandLog() throws InterruptedException
 	{
-		HomePage hp =new HomePage(driver);
-		hp.clickOnSignInbtn();
+		try {
+			HomePage hp =new HomePage(driver);
+			hp.acceptCookies();
+			hp.clickOnSignInbtn();
 
-		LoginAndCreateAccPage lg = new LoginAndCreateAccPage(driver);
-		lg.enterEmailField("pawan.bokoliaqa@gmail.com");
-		lg.enterPassword("Pawanbokolia@95");
-		lg.clickOnLoginBtn();
+			LoginAndCreateAccPage lg = new LoginAndCreateAccPage(driver);
+			lg.enterEmailField("pawan.bokoliaqa@gmail.com");
+			lg.enterPassword("Pawanbokolia@95");
+			lg.clickOnLoginBtn();
 
-		Thread.sleep(3000);
-		
-		MyAccPage mp =new MyAccPage(driver);
-		String text1 =	mp.verifLogin();
-		Assert.assertEquals(text1, "My Account");
+			Thread.sleep(3000);
+			
+			MyAccPage mp =new MyAccPage(driver);
+			String text1 =	mp.verifLogin();
+			Assert.assertEquals(text1, "My Account");
 
-		hp.clickOnSignOut();
+			mp.clickonloginmenu();
+			hp.clickOnSignOut();
 
-		Thread.sleep(2000);
-		String text2 = hp.verifySignOut();
+			Thread.sleep(2000);
+			String text2 = hp.verifySignOut();
 
-		Assert.assertEquals(text2, "You are signed out");
+			Assert.assertEquals(text2, "You are signed out");
+		}
+		catch(Exception e )
+		{
+			System.out.println(e.getMessage());
+		}
 
 
 

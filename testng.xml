@@ -22,7 +22,7 @@
        	<class name="testCases.TC006_WishListAddAndDelete"/>			-->
        			
        	
-       	<class name="testCases.TC007_CreateAccount"/>		
+     <class name="testCases.TC001_LoginAndLogOut"/>
        			
     </classes>
   </test> <!-- Test -->

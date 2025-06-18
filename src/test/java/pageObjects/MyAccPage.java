@@ -9,9 +9,14 @@ public class MyAccPage extends BasePage {
 	public MyAccPage(WebDriver driver) {
 		super(driver);
 	}
-
-	@FindBy(xpath="//div[@class='panel header']//button")
+	
+	//text capture "My Account" 
+	@FindBy(xpath="//span[@class='base']")
 	WebElement loginbtnmega;
+	
+	@FindBy(css="div[class='panel header'] button[type='button']")
+	WebElement toploginmenu;
+	
 	
 	@FindBy(xpath="//div[@data-bind=\"scope: 'messages'\"]")
 	WebElement CreateCustomerMsg;
@@ -22,9 +27,7 @@ public class MyAccPage extends BasePage {
 	
 	public String verifLogin()
 	{
-		loginbtnmega.click();
 		return loginbtnmega.getText();
-
 	}
 	
 	public String verfyCreateCustomer()
@@ -32,6 +35,10 @@ public class MyAccPage extends BasePage {
 		return CreateCustomerMsg.getText();
 	}
 	
+	public void clickonloginmenu()
+	{
+		toploginmenu.click();
+	}
 	
 	
 }

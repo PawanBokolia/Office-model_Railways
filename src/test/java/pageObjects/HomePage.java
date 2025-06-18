@@ -29,7 +29,7 @@ public class HomePage extends BasePage{
 	
 
 	@FindBy(xpath="//div[@class='panel header']//li[@data-label='or']//a")
-	WebElement signInbtn;
+	WebElement loginsection;
 
 
 
@@ -82,14 +82,11 @@ public class HomePage extends BasePage{
 	}
 	
 	
-	
+	//login section pop up
 	public void clickOnSignInbtn()
 	{
-		signInbtn.click();
+		loginsection.click();
 	}
-
-
-
 
 	public void clickOnSignOut()
 	{

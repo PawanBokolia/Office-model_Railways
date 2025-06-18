@@ -5,13 +5,13 @@
     <parameter name="br" value="chrome"/>
     <parameter name="os" value="windows"/>
     <classes>
-      <class name="testCases.TC007_CreateAccount">
+      <class name="testCases.TC001_LoginAndLogOut">
         <methods>
           <include name="tearDown"/>
-          <include name="CreateAccount"/>
+          <include name="loginandLog"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- testCases.TC007_CreateAccount -->
+      </class> <!-- testCases.TC001_LoginAndLogOut -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
