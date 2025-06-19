@@ -88,7 +88,11 @@ public class ProductListingPage extends BasePage{
 
 	public void clickOnSingleProduct()
 	{
-		products.get(0).click();
+		if(products.get(0).isDisplayed() && products.get(0).isEnabled())
+		{
+			products.get(0).click();	
+		}
+		
 	}
 }
 

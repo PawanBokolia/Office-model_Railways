@@ -42,13 +42,15 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass{
 		
 		CheckOutPage checkpg= new CheckOutPage(driver);
 		
-		Thread.sleep(5000);
-		checkpg.emailInputFild();
+		Thread.sleep(2000);
+		checkpg.emailInputFild("pawan.bokoliaqa@gmail.com");
 	
-		Thread.sleep(100000);
+		Thread.sleep(4000);
 		checkpg.passwordInputField("Pawanbokolia@95");
+		
 		checkpg.clickOnLoginBtn();
 		
+		Thread.sleep(10000);
 //		checkpg.nameInputField();
 		
 	

@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +14,7 @@ public class CheckOutPage extends BasePage {
 		super(driver);
 	}
 
-	@FindBy(xpath="//input[@class='input-text valid']")
+	@FindBy(xpath="//input[@id='customer-email']")
 	WebElement emailAddress;
 	
 	@FindBy(id="customer-password")
@@ -27,10 +28,12 @@ public class CheckOutPage extends BasePage {
 	
 	
 	
-	public void emailInputFild()
+	public void emailInputFild(String email )
 	{
-		js.executeScript("arguments[0].click();", emailAddress);
-		js.executeScript("arguments[0].value='pawan.bokoliaqa@gmail.com';",emailAddress);
+		emailAddress.sendKeys(email);
+		emailAddress.sendKeys(Keys.ENTER);
+//		js.executeScript("arguments[0].click();", emailAddress);
+//		js.executeScript("arguments[0].value='pawan.bokoliaqa@gmail.com';",emailAddress);
 	}
 	
 	public void passwordInputField(String pwd)
