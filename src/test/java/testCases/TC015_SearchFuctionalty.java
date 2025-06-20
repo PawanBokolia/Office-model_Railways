@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pageObjects.HomePage;
 import testBase.BaseClass;
 
-public class TC014_SearchFuctionalty extends BaseClass{
+public class TC015_SearchFuctionalty extends BaseClass{
 	
 	@Test
 	public void SearchFuctionalty() throws InterruptedException

@@ -28,10 +28,8 @@
        	<class name="testCases.TC013_SearchFuctionalty"/>				  
 		<class name="testCases.TC014_CartPageActions"/>					 -->
 		  	
-	
-			  
 		
-       	<class name="testCases.TC012_WishListAndCompareBtn_onProduct"/>
+       	<class name="testCases.TC008_OrderLogin_via_Elavon"/>
 		  	 
     </classes>
   </test> <!-- Test -->

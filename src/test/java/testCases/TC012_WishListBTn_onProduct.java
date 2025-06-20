@@ -10,7 +10,7 @@ import pageObjects.ProductDetailPage;
 import pageObjects.ProductListingPage;
 import testBase.BaseClass;
 
-public class TC012_WishListAndCompareBtn_onProduct extends BaseClass{
+public class TC012_WishListBTn_onProduct extends BaseClass{
 
 	@Test
 	public void buttonOnproductPage() throws InterruptedException {

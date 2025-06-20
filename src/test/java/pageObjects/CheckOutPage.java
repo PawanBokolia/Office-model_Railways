@@ -1,13 +1,19 @@
 package pageObjects;
 
+import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CheckOutPage extends BasePage {
 	
 	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 	
 	public CheckOutPage(WebDriver driver) {
 		super(driver);
@@ -28,6 +34,31 @@ public class CheckOutPage extends BasePage {
 	
 	@FindBy(xpath="(//input[@name='firstname'])[1]")
 	WebElement namefield;
+	
+	@FindBy(xpath="//table[@class='table-checkout-shipping-method amcheckout-shipping-methods']//tr//td[1]")
+	List<WebElement> shipingMethod;
+	
+	@FindBy(id="sagepaysuiteserver")
+	WebElement elavonPayment;
+	
+	@FindBy(css=".action.primary.checkout.amasty")
+	WebElement orderPlaceBtn;
+	
+	//i frame
+	@FindBy(xpath="//iframe[@class=\"sagepaysuiteserver_embed_low\"]")
+	WebElement cardNo;
+	
+	@FindBy(name="expirymonth")
+	WebElement expireMnth;
+	
+	@FindBy(name="expiryyear")
+	WebElement expireYear;
+	
+	@FindBy(name = "securitycode")
+	WebElement cvv;
+	
+	@FindBy(xpath="//button[@value='proceed']")
+	WebElement proceedBtn;
 	
 	
 	
@@ -58,6 +89,45 @@ public class CheckOutPage extends BasePage {
 		js.executeScript("arguments[0].value='pawan.bokoliaqa@gmail.com';",namefield);
 	}
 	
+	public void selectShipingMethod()
+	{
+		shipingMethod.get(0).click();
+	}
 	
+	public void selectElavonOption()
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(elavonPayment));
+		elavonPayment.click();
+	}
+	
+	public void clickOnOrderPlaceBtn()
+	{
+		orderPlaceBtn.click();
+	}
+	
+	public void enterCardNo(String cardno)
+	{
+		cardNo.sendKeys(cardno);
+	}
+	
+	public void enterExipreMonth(String expire)
+	{
+		expireMnth.sendKeys(expire);
+	}
+	
+	public void enterExipreYear(String year)
+	{
+		expireYear.sendKeys(year);
+	}
+	
+	public void enterCVV(String cvv)
+	{
+		expireYear.sendKeys(cvv);
+	}
+	
+	public void clickOnProceedBtn()
+	{
+		proceedBtn.click();
+	}
 	
 }

@@ -27,6 +27,7 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass{
 			ProductDetailPage pd = new ProductDetailPage(driver);
 			pd.clickOnAddtoCartBtn();
 
+			Thread.sleep(3000);
 			hp.clickOnMiniCartBtn();
 
 			CartPage cp = new CartPage(driver);
@@ -41,13 +42,27 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass{
 			checkpg.passwordInputField("Pawanbokolia@95");
 
 			checkpg.clickOnLoginBtn();
-
-			Thread.sleep(10000);
-			//		checkpg.nameInputField();
-
-
+			
+			Thread.sleep(3000);
+			checkpg.selectShipingMethod();
+			
+			Thread.sleep(3000);
+			checkpg.selectElavonOption();
+			checkpg.clickOnOrderPlaceBtn();
+			
+			Thread.sleep(6000);
 		
-		//need to be completed
+			driver.switchTo().frame(0);
+			checkpg.enterCardNo("4929000000006");
+			checkpg.enterExipreMonth("02");
+			checkpg.enterExipreYear("28");
+			checkpg.enterCVV("123");
+			checkpg.clickOnProceedBtn();
+			
+			
+			
+			
+			
 		
 
 
