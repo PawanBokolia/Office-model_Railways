@@ -1,6 +1,5 @@
 package testCases;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pageObjects.CartPage;
@@ -15,17 +14,10 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass{
 	@Test
 	public void OrderLogin () throws InterruptedException {
 
-		try {
 			HomePage hp = new HomePage(driver);		
 			hp.acceptCookies();
-
-			Thread.sleep(2000);
 			hp.moveOnCategoryScale();
-
-			Thread.sleep(2000);
 			hp.moveOnSubCategoryrolling();		
-
-			Thread.sleep(2000);
 			hp.clickOnSubCategoryWagon();
 
 
@@ -35,7 +27,6 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass{
 			ProductDetailPage pd = new ProductDetailPage(driver);
 			pd.clickOnAddtoCartBtn();
 
-			Thread.sleep(4000);
 			hp.clickOnMiniCartBtn();
 
 			CartPage cp = new CartPage(driver);
@@ -55,12 +46,6 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass{
 			//		checkpg.nameInputField();
 
 
-		}
-		catch(Exception e )
-		{
-			System.out.println(e.getMessage());
-			Assert.assertTrue(false);	
-		}
 		
 		//need to be completed
 		

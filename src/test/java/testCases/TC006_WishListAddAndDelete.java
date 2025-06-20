@@ -24,13 +24,8 @@ public class TC006_WishListAddAndDelete extends BaseClass{
 		lg.enterPassword("Pawanbokolia@95");
 		lg.clickOnLoginBtn();
 		
-		Thread.sleep(2000);
 		hp.moveOnCategoryScale();
-
-		Thread.sleep(2000);
 		hp.moveOnSubCategoryrolling();
-		
-		Thread.sleep(2000);
 		hp.clickOnSubCategoryWagon();
 
 		Thread.sleep(2000);

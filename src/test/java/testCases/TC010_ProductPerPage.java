@@ -14,14 +14,8 @@ public class TC010_ProductPerPage extends BaseClass {
 		
 		HomePage hp = new HomePage(driver);		
 		hp.acceptCookies();
-
-		Thread.sleep(2000);
 		hp.moveOnCategoryScale();
-
-		Thread.sleep(2000);
 		hp.moveOnSubCategoryrolling();		
-
-		Thread.sleep(2000);
 		hp.clickOnSubCategoryWagon();
 		
 		ProductListingPage pl= new ProductListingPage(driver);

@@ -10,7 +10,7 @@ public class MyAccPage extends BasePage {
 		super(driver);
 	}
 	
-	//text capture "My Account" 
+	//text capture "My Account" 		//not in use 
 	@FindBy(xpath="//span[@class='base']")
 	WebElement loginbtnmega;
 	
@@ -25,7 +25,7 @@ public class MyAccPage extends BasePage {
 	
 	
 	
-	public String verifLogin()
+	public String verifLogin() //not in the use 
 	{
 		return loginbtnmega.getText();
 	}

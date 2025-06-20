@@ -15,14 +15,8 @@ public class TC009_QuickViewIsPresent extends BaseClass {
 		
 			HomePage hp = new HomePage(driver);		
 			hp.acceptCookies();
-
-			Thread.sleep(2000);
 			hp.moveOnCategoryScale();
-
-			Thread.sleep(2000);
 			hp.moveOnSubCategoryrolling();		
-
-			Thread.sleep(2000);
 			hp.clickOnSubCategoryWagon();
 
 

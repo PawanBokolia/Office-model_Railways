@@ -74,6 +74,18 @@ public class HomePage extends BasePage{
 
 	@FindBy(xpath="//a[@class='action viewcart']")
 	WebElement miniCartCartBtn;
+	
+	//Search
+	@FindBy(id="search")
+	WebElement searchBar;
+	
+	@FindBy(css="li.mst-searchautocomplete__item.magento_catalog_product")
+	WebElement searchResult;
+	
+	@FindBy(css="span.sku")
+	WebElement skuValue;
+	
+	
 	//cookies
 	public void acceptCookies()
 	{
@@ -135,22 +147,28 @@ public class HomePage extends BasePage{
 
 	public void moveOnCategoryScale()
 	{
+		wait.until(ExpectedConditions.visibilityOf(categoryScale));
 		act.moveToElement(categoryScale).perform();
 	}
 
 	public void moveOnSubCategoryrolling()
 	{
+		wait.until(ExpectedConditions.visibilityOf(subCategoryRolling));
 		act.moveToElement(subCategoryRolling).perform();
 	}
 
 	public void clickOnSubCategoryWagon()
 	{
+		wait.until(ExpectedConditions.visibilityOf(subCategoryWagon));
 		js.executeScript("arguments[0].click();", subCategoryWagon);
 	}
 
+	
+	//mini cart
 	public void clickOnMiniCartBtn()
 	{
 
+		wait.until(ExpectedConditions.elementToBeClickable(minicartbtn));
 		minicartbtn.click();
 
 		if(miniCartpopup.isDisplayed() && miniCartpopup.isEnabled()==true)
@@ -159,8 +177,24 @@ public class HomePage extends BasePage{
 		}
 	}
 
-		
+	//Search
+	public void enterTextOnSearchBar(String text)
+	{
+		searchBar.clear();
+		searchBar.sendKeys(text);
+	}
 
+	public boolean verifySearchResult()
+	{
+		wait.until(ExpectedConditions.visibilityOf(searchResult));
+		return searchResult.isDisplayed();
+	}
+
+	public String verifySkuInSearch()
+	{
+		return skuValue.getText();
+	}
+	
 
 }
 

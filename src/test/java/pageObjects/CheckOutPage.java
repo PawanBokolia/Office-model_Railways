@@ -39,7 +39,7 @@ public class CheckOutPage extends BasePage {
 	
 	public void passwordInputField(String pwd)
 	{
-		if(passwordfield.isDisplayed() == true)
+		if(passwordfield.isDisplayed() && passwordfield.isEnabled()== true)
 		{
 			passwordfield.sendKeys(pwd);
 		}
