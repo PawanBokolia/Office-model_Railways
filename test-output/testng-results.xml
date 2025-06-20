@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-18T19:30:10 IST" name="Suite" finished-at="2025-06-18T19:31:14 IST" duration-ms="63789">
+  <suite started-at="2025-06-20T13:23:41 IST" name="Suite" finished-at="2025-06-20T13:24:05 IST" duration-ms="24288">
     <groups>
     </groups>
-    <test started-at="2025-06-18T19:30:10 IST" name="Test" finished-at="2025-06-18T19:31:14 IST" duration-ms="63789">
-      <class name="testCases.TC008_OrderLogin_via_Elavon">
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC008_OrderLogin_via_Elavon@5b239d7d]" started-at="2025-06-18T19:30:10 IST" name="setUp" finished-at="2025-06-18T19:30:27 IST" duration-ms="16603" status="PASS">
+    <test started-at="2025-06-20T13:23:41 IST" name="Test" finished-at="2025-06-20T13:24:05 IST" duration-ms="24288">
+      <class name="testCases.TC012_WishListAndCompareBtn_onProduct">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC012_WishListAndCompareBtn_onProduct@6572421]" started-at="2025-06-20T13:23:41 IST" name="setUp" finished-at="2025-06-20T13:23:56 IST" duration-ms="15159" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,15 +23,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="OrderLogin()[pri:0, instance:testCases.TC008_OrderLogin_via_Elavon@5b239d7d]" started-at="2025-06-18T19:30:27 IST" name="OrderLogin" finished-at="2025-06-18T19:31:14 IST" duration-ms="46890" status="PASS">
+        <test-method signature="buttonOnproductPage()[pri:0, instance:testCases.TC012_WishListAndCompareBtn_onProduct@6572421]" started-at="2025-06-20T13:23:56 IST" name="buttonOnproductPage" finished-at="2025-06-20T13:24:05 IST" duration-ms="8642" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- OrderLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC008_OrderLogin_via_Elavon@5b239d7d]" started-at="2025-06-18T19:31:14 IST" name="tearDown" finished-at="2025-06-18T19:31:14 IST" duration-ms="247" status="PASS">
+        </test-method> <!-- buttonOnproductPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC012_WishListAndCompareBtn_onProduct@6572421]" started-at="2025-06-20T13:24:05 IST" name="tearDown" finished-at="2025-06-20T13:24:05 IST" duration-ms="119" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC008_OrderLogin_via_Elavon -->
+      </class> <!-- testCases.TC012_WishListAndCompareBtn_onProduct -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

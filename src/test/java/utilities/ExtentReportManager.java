@@ -41,13 +41,13 @@ public class ExtentReportManager implements ITestListener{
 			
 			
 			
-			sparkReporter.config().setDocumentTitle("Jerry's Automation Report");
-			sparkReporter.config().setReportName("Jerry's functional testing");
+			sparkReporter.config().setDocumentTitle("Model_Railways");
+			sparkReporter.config().setReportName("Model_Railways functionality Testing");
 			sparkReporter.config().setTheme(Theme.DARK);
 			
 			extent = new ExtentReports();
 			extent.attachReporter(sparkReporter);
-			extent.setSystemInfo("Application" , "Jerrysartarama");
+			extent.setSystemInfo("Application" , "Model_railways");
 			extent.setSystemInfo("Module", "Admin");
 			extent.setSystemInfo("Sub Module", "Customers");
 			extent.setSystemInfo("User Name", System.getProperty("user.name"));

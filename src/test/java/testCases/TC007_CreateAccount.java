@@ -43,7 +43,7 @@ public class TC007_CreateAccount extends BaseClass{
 		
 		Thread.sleep(3000);
 		MyAccPage mp = new MyAccPage(driver);
-		String verify = mp.verfyCreateCustomer();
+		String verify = mp.verifyUniversalMsg();
 		
 		Assert.assertEquals(verify, "Thank you for registering with Model Railways Direct Ltd.");
 		

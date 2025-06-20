@@ -69,8 +69,11 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//a[@class='action showcart']")
 	WebElement minicartbtn;
 
+	@FindBy(xpath="//div[@id='ui-id-1']")
+	WebElement miniCartpopup;
 
-
+	@FindBy(xpath="//a[@class='action viewcart']")
+	WebElement miniCartCartBtn;
 	//cookies
 	public void acceptCookies()
 	{
@@ -147,13 +150,19 @@ public class HomePage extends BasePage{
 
 	public void clickOnMiniCartBtn()
 	{
-		if(minicartbtn.isEnabled())
-		{
-			minicartbtn.click();	
-		}
 
+		minicartbtn.click();
+
+		if(miniCartpopup.isDisplayed() && miniCartpopup.isEnabled()==true)
+		{
+			miniCartCartBtn.click();
+		}
 	}
 
+		
 
 
 }
+
+
+

@@ -13,8 +13,12 @@ public class CheckOutPage extends BasePage {
 		super(driver);
 	}
 
-	@FindBy(xpath="//input[@class='input-text valid']")
+//	@FindBy(xpath="//input[@id='customer-email']") //live site 
+//	WebElement emailAddress;
+
+	@FindBy(id="customer-email")  //demo site 
 	WebElement emailAddress;
+	
 	
 	@FindBy(id="customer-password")
 	WebElement passwordfield;
@@ -27,15 +31,15 @@ public class CheckOutPage extends BasePage {
 	
 	
 	
-	public void emailInputFild()
+	public void emailInputFild(String email )
 	{
-		js.executeScript("arguments[0].click();", emailAddress);
-		js.executeScript("arguments[0].value='pawan.bokoliaqa@gmail.com';",emailAddress);
+		emailAddress.sendKeys(email);
+//		emailAddress.sendKeys(Keys.ENTER);
 	}
 	
 	public void passwordInputField(String pwd)
 	{
-		if(passwordfield.isDisplayed())
+		if(passwordfield.isDisplayed() == true)
 		{
 			passwordfield.sendKeys(pwd);
 		}
@@ -43,7 +47,7 @@ public class CheckOutPage extends BasePage {
 	
 	public void clickOnLoginBtn()
 	{
-		if(loginBtn.isEnabled())
+		if(loginBtn.isEnabled() ==true)
 		{
 			loginBtn.click();
 		}

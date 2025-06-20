@@ -33,7 +33,7 @@ public class BaseClass {
 		p.load(file);
 		
 		ChromeOptions option = new ChromeOptions();
-//		option.addArguments("--headless");
+		option.addArguments("--headless");
 		option.addArguments("--incognito");
 		
 		
@@ -45,7 +45,7 @@ public class BaseClass {
 		default: System.out.println("invalid browser name"); return;
 		}
 		
-		driver.get(p.getProperty("AppURL1"));
+		driver.get(p.getProperty("AppURL2"));
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();	
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));

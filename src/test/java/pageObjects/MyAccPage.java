@@ -17,9 +17,9 @@ public class MyAccPage extends BasePage {
 	@FindBy(css="div[class='panel header'] button[type='button']")
 	WebElement toploginmenu;
 	
-	
 	@FindBy(xpath="//div[@data-bind=\"scope: 'messages'\"]")
-	WebElement CreateCustomerMsg;
+	WebElement universal_msg;
+	
 	
 	
 	
@@ -30,9 +30,9 @@ public class MyAccPage extends BasePage {
 		return loginbtnmega.getText();
 	}
 	
-	public String verfyCreateCustomer()
+	public String verifyUniversalMsg()
 	{
-		return CreateCustomerMsg.getText();
+		return universal_msg.getText();
 	}
 	
 	public void clickonloginmenu()
