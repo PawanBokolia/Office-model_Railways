@@ -1,6 +1,5 @@
 package pageObjects;
 
-import java.rmi.server.ExportException;
 import java.time.Duration;
 
 import org.openqa.selenium.JavascriptExecutor;
