@@ -33,7 +33,7 @@ public class BaseClass {
 		p.load(file);
 		
 		ChromeOptions option = new ChromeOptions();
-		option.addArguments("--headless");
+//		option.addArguments("--headless");
 		option.addArguments("--incognito");
 		
 		

@@ -45,10 +45,10 @@ public class CheckOutPage extends BasePage {
 	WebElement orderPlaceBtn;
 	
 	//i frame
-	@FindBy(xpath="//iframe[@class=\"sagepaysuiteserver_embed_low\"]")
+	@FindBy(css="input[name='cardnumber']")
 	WebElement cardNo;
 	
-	@FindBy(name="expirymonth")
+	@FindBy(css="input[name='expirymonth']")
 	WebElement expireMnth;
 	
 	@FindBy(name="expiryyear")
@@ -57,8 +57,18 @@ public class CheckOutPage extends BasePage {
 	@FindBy(name = "securitycode")
 	WebElement cvv;
 	
-	@FindBy(xpath="//button[@value='proceed']")
+	@FindBy(xpath="(//button[@name='action'])[1]")
 	WebElement proceedBtn;
+	
+	@FindBy(css="input#cd")
+	WebElement clallengefield;
+	
+	@FindBy(css=".button.button4")
+	WebElement nextBtn;
+	
+	@FindBy(xpath="//span[@class='base']")
+	WebElement orderConfMsg;
+	
 	
 	
 	
@@ -120,14 +130,33 @@ public class CheckOutPage extends BasePage {
 		expireYear.sendKeys(year);
 	}
 	
-	public void enterCVV(String cvv)
+	public void enterCVV(String code)
 	{
-		expireYear.sendKeys(cvv);
+		cvv.sendKeys(code);
 	}
 	
 	public void clickOnProceedBtn()
 	{
 		proceedBtn.click();
 	}
+	
+	public void inputChallengeField(String input)
+	{
+		clallengefield.sendKeys(input);
+	}
+	
+	public void clickOnNextButton()
+	{
+		nextBtn.click();
+	}
+	
+	public String orderConfirmMsg()
+	{
+		wait.until(ExpectedConditions.visibilityOf(orderConfMsg));
+		return orderConfMsg.getText();
+	}
+	
+	
+	
 	
 }

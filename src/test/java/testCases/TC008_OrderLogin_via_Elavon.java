@@ -1,5 +1,8 @@
 package testCases;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pageObjects.CartPage;
@@ -48,16 +51,31 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass{
 			
 			Thread.sleep(3000);
 			checkpg.selectElavonOption();
+			
+			Thread.sleep(3000);
 			checkpg.clickOnOrderPlaceBtn();
 			
-			Thread.sleep(6000);
-		
-			driver.switchTo().frame(0);
+			Thread.sleep(5000);
+
+			WebElement frame = driver.findElement(By.xpath("//iframe[@class=\"sagepaysuiteserver_embed_low\"]"));
+			driver.switchTo().frame(frame);
+			
 			checkpg.enterCardNo("4929000000006");
 			checkpg.enterExipreMonth("02");
 			checkpg.enterExipreYear("28");
 			checkpg.enterCVV("123");
 			checkpg.clickOnProceedBtn();
+			
+			Thread.sleep(4000);
+			
+			checkpg.inputChallengeField("challenge");
+			checkpg.clickOnNextButton();
+			
+			driver.switchTo().defaultContent();
+			
+			String conf = checkpg.orderConfirmMsg();
+			System.out.println( checkpg.orderConfirmMsg());
+			Assert.assertEquals(conf,"Thank you for your purchase!");
 			
 			
 			

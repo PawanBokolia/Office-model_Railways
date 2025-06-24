@@ -29,19 +29,10 @@
 		<class name="testCases.TC014_CartPageActions"/>					
 		<class name="testCases.TC015_SearchFuctionalty"/>				 -->
 		
-  		<class name="testCases.TC001_LoginAndLogOut"/>
-   		<class name="testCases.TC002_Newsletter"/> 		
-		<class name="testCases.TC005_AddComapreAndDelete"/> 		
-       	<class name="testCases.TC006_WishListAddAndDelete"/> 
-       	<class name="testCases.TC008_OrderLogin_via_Elavon"/> 			
-		<class name="testCases.TC009_QuickViewIsPresent"/>				
-       	<class name="testCases.TC010_ProductPerPage"/>				
-        <class name="testCases.TC011_Pagination"/>				
-       	<class name="testCases.TC012_WishListBTn_onProduct"/>
-       	<class name="testCases.TC013_CompareButton_onProduct"/>				  
-		<class name="testCases.TC014_CartPageActions"/>					
-		<class name="testCases.TC015_SearchFuctionalty"/>
+  					
 		
+		<class name="testCases.TC008_OrderLogin_via_Elavon"/> 			
+
 		
 		
 		
