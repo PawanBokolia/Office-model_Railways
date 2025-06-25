@@ -35,6 +35,13 @@ public class CheckOutPage extends BasePage {
 	@FindBy(xpath="(//input[@name='firstname'])[1]")
 	WebElement namefield;
 	
+	@FindBy(xpath="(//input[@name='lastname'])[1]")
+	WebElement lastnameField;
+	
+	@FindBy(xpath="(//input[@placeholder='Start typing your address'])[1]")
+	WebElement searchAddressfield;
+	
+	
 	@FindBy(xpath="//table[@class='table-checkout-shipping-method amcheckout-shipping-methods']//tr//td[1]")
 	List<WebElement> shipingMethod;
 	
@@ -69,8 +76,7 @@ public class CheckOutPage extends BasePage {
 	@FindBy(xpath="//span[@class='base']")
 	WebElement orderConfMsg;
 	
-	
-	
+
 	
 	public void emailInputFild(String email )
 	{
@@ -94,9 +100,19 @@ public class CheckOutPage extends BasePage {
 		}
 	}
 	
-	public void nameInputField()
+	public void nameInputField(String name)
 	{
-		js.executeScript("arguments[0].value='pawan.bokoliaqa@gmail.com';",namefield);
+		namefield.sendKeys(name);
+	}
+	
+	public void lastnameInputfield(String lastname)
+	{
+		lastnameField.sendKeys(lastname);
+	}
+	
+	public void inputSearchAddressField(String address)
+	{
+		searchAddressfield.sendKeys(address);
 	}
 	
 	public void selectShipingMethod()
@@ -115,6 +131,7 @@ public class CheckOutPage extends BasePage {
 		orderPlaceBtn.click();
 	}
 	
+	//Elavon Card details
 	public void enterCardNo(String cardno)
 	{
 		cardNo.sendKeys(cardno);
