@@ -30,7 +30,7 @@ public class CartPage extends BasePage {
 	
 	public void clickOnCheckoutBtn()
 	{
-		if(checkoutBtn.isEnabled())
+		if(checkoutBtn.isEnabled() == true )
 		{
 			checkoutBtn.click();
 		}
