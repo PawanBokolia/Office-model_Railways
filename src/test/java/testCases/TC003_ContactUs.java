@@ -21,7 +21,7 @@ public class TC003_ContactUs extends BaseClass {
 		cnt.inputUserfield("Pawan");
 		cnt.inputEmailField("pawan."+randomString()+"@gmail.com");
 		cnt.inputTeleField(randomNumber());
-		cnt.inputCommentField("This is for testing");
+		cnt.inputCommentField("This is for testing please ignore");
 	
 		Thread.sleep(2000);
 		cnt.clickOnSubmitBTN();
