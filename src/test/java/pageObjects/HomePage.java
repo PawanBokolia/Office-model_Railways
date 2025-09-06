@@ -159,7 +159,7 @@ public class HomePage extends BasePage{
 
 	public void clickOnSubCategoryWagon()
 	{
-		wait.until(ExpectedConditions.visibilityOf(subCategoryWagon));
+		wait.until(ExpectedConditions.elementToBeClickable(subCategoryWagon));
 		js.executeScript("arguments[0].click();", subCategoryWagon);
 	}
 

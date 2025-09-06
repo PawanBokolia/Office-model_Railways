@@ -25,7 +25,7 @@ public class ProductDetailPage extends BasePage{
 	@FindBy(xpath="//div[@class='product-addto-links']//a[1]")
 	WebElement wishListBtn;
 	
-	@FindBy(xpath="//div[@class='product-addto-links']//a[2]")
+	@FindBy(xpath="a[class='action tocompare'][data-role='add-to-links']")
 	WebElement compareBtn;
 	
 	
@@ -39,13 +39,13 @@ public class ProductDetailPage extends BasePage{
 	
 	public void clickOnWishListBtn()
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(wishListBtn));
-		wishListBtn.click();
+		js.executeScript("arguments[0].click();",wishListBtn);
+//		wishListBtn.click();
 	}
 	
 	public void clickOnCompareBtn()
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(compareBtn));
-		wishListBtn.click();
+		compareBtn.click();
 	}
 }

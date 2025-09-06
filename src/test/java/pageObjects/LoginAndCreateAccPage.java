@@ -69,6 +69,16 @@ public class LoginAndCreateAccPage extends BasePage{
 	@FindBy(css="button[title='Continue']")
 	WebElement contbtn;
 	
+	//forgot password
+	@FindBy(css="a[class='action remind']")
+	WebElement forgotPwdLink;
+	
+	@FindBy(css="input#email_address")
+	WebElement forgotEmailfield;
+	
+	@FindBy(css="button.action.submit.primary")
+	WebElement forgotContBtn;
+	
 	
 	public void enterEmailField(String email)
 	{
@@ -156,5 +166,21 @@ public class LoginAndCreateAccPage extends BasePage{
 	{
 		contbtn.click();
 	}
+	
+	public void clickOnForgotPwd()
+	{
+		forgotPwdLink.click();
+	}
+	
+	public void inputFrgPwdField(String email)
+	{
+		forgotEmailfield.sendKeys(email);
+	}
+	
+	public void clickOnForgotContBtn()
+	{
+		forgotContBtn.click();
+	}
+	
 	
 }

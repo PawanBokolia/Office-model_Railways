@@ -1,0 +1,3 @@
+#folders need to be added to run the framework #add these folder manually before running any scripts
+screenshots
+reports
