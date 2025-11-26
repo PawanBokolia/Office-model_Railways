@@ -8,7 +8,6 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -19,10 +18,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-public class BaseClass {
+import utilities.Reusable_FakerUtils;
+import utilities.Reusable_MouseKeyboardActions;
 
-	static public WebDriver driver;
+public class BaseClass {
+//static 
+	public WebDriver driver;
 	Properties p;
+	public Reusable_FakerUtils faker;
+	public Reusable_MouseKeyboardActions act;
 	
 	@Parameters({"os","br"})
 	@BeforeClass
@@ -34,53 +38,35 @@ public class BaseClass {
 		
 		ChromeOptions option = new ChromeOptions();
 //		option.addArguments("--headless");
-		option.addArguments("--incognito");
+//		option.addArguments("--incognito");
 		
 		
 		switch (br.toLowerCase()) 
 		{
-		case "chrome" : driver = new ChromeDriver(option);	break;
-		case "firefox": driver=new FirefoxDriver();	    break;
+			case "chrome" : driver = new ChromeDriver(option);	break;
+			case "firefox": driver = new FirefoxDriver();	    break;
 
-		default: System.out.println("invalid browser name"); return;
+			default: System.out.println("invalid browser name"); return;
 		}
+		
+		faker = new Reusable_FakerUtils();
+		
 		
 		driver.get(p.getProperty("AppURL2"));
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();	
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
+		
 	}
 	
 	
-	
-	@AfterClass
+//	@AfterClass
 	public void tearDown()
 	{
 		driver.quit();
 	}
 	
-	
-	
-	
-	
-	public String randomString()
-	{
-		return RandomStringUtils.randomAlphabetic(3);
-	}
-	
-	
-	public String randomNumber()
-	{
-		return RandomStringUtils.randomNumeric(3);
-	}
-	
-	public String randomAlphaNumeric()
-	{
-		String generateString = RandomStringUtils.randomAlphabetic(3);
-		String generateNum= RandomStringUtils.randomNumeric(3);
-		return(generateString+"@"+generateNum);
-	}
 	
 	//ScreenShot 
 	public String captureScreen(String tname) throws IOException

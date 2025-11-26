@@ -15,7 +15,7 @@ public class TC002_Newsletter extends BaseClass{
 			
 			HomePage hp = new HomePage(driver);
 			hp.acceptCookies();
-			hp.newsletterInput("pawan."+randomString()+"@gmail.com");
+			hp.newsletterInput(faker.randomEmail());
 
 			Thread.sleep(3000);
 			hp.clickOnNewsSubBtn();

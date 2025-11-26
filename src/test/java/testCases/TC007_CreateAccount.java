@@ -20,12 +20,12 @@ public class TC007_CreateAccount extends BaseClass{
 		
 		LoginAndCreateAccPage accPg = new LoginAndCreateAccPage(driver);
 		accPg.clickOnCreateAccbtn();
-		accPg.fillEmailfield("pawan.bokoliaqa"+randomString()+"@gmail.com");
+		accPg.fillEmailfield(faker.randomEmail());
 		accPg.clickOnNewsCheckBox();	
 		accPg.fillNameField("test");
 		accPg.fillLastnameField("Chilliapple");
-		accPg.fillteleField("123456789");
-		accPg.fillmobileField("321456987");
+		accPg.fillteleField(faker.randomPhoneNum());
+		accPg.fillmobileField(faker.randomPhoneNum());
 		accPg.selectDrpCountry("GB");
 		
 		accPg.searchAddress("Edern");

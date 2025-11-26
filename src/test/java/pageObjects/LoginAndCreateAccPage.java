@@ -54,7 +54,7 @@ public class LoginAndCreateAccPage extends BasePage{
 	WebElement addressSearchfield;
 	
 	//result of a word 
-	@FindBy(xpath="//ul[@aria-label='Results']")
+	@FindBy(xpath="//ul[@aria-label='Results']//li")
 	List<WebElement> resultList;
 	
 	@FindBy(id="password")
