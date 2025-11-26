@@ -4,12 +4,14 @@
 	
 	<listeners>
 		<listener class-name="utilities.ExtentReportManager"/>
-		</listeners>												
+	
+	</listeners>												
 	
 	<test thread-count="5" name="Test">
-    <parameter name="os" value="windows"></parameter>
+		<pass
+			ameter name="os" value="windows"></parameter>
 	<parameter name="br" value="chrome"></parameter>    
-    
+ 
 
     <classes>
 
@@ -24,12 +26,29 @@
 		<class name="testCases.TC009_QuickViewIsPresent"/>				
        	<class name="testCases.TC010_ProductPerPage"/>				
         <class name="testCases.TC011_Pagination"/>				
+<class name="testCases.TC012_WishListAndCompareBtn_onProduct"/>
+       	<class name="testCases.TC013_SearchFuctionalty"/>				  
+		<class name="testCases.TC014_CartPageActions"/>					
+		<class name="testCases.TC015_SearchFuctionalty"/>				 -->
+		
+  		<class name="testCases.TC001_LoginAndLogOut"/>
+   			
+  		<class name="testCases.TC003_ContactUs"/>    
+		<class name="testCases.TC004_AboutUs"/>  						
+   		<class name="testCases.TC005_AddComapreAndDelete"/> 		
+       	<class name="testCases.TC006_WishListAddAndDelete"/>			
+       	<class name="testCases.TC007_CreateAccount"/> 
+     		
+		<class name="testCases.TC009_QuickViewIsPresent"/>				
+       	<class name="testCases.TC010_ProductPerPage"/>				
+        <class name="testCases.TC011_Pagination"/>				
        	<class name="testCases.TC012_WishListBTn_onProduct"/>
        	<class name="testCases.TC013_CompareButton_onProduct"/>				  
 		<class name="testCases.TC014_CartPageActions"/>					
-		<class name="testCases.TC015_SearchFuctionalty"/>			
-			
-		
-    </classes>
+
+		<class name="testCases.TC015_SearchFuctionalty"/>	
+   	
+
+	</classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
