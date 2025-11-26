@@ -65,12 +65,11 @@ public class HomePage extends BasePage{
 	@FindBy(linkText="Wagon Loads & Containers")
 	WebElement subCategoryWagon;
 
+	
 	//mini cart
 	@FindBy(xpath="//a[@class='action showcart']")
 	WebElement minicartbtn;
 
-	@FindBy(xpath="//div[@id='ui-id-1']")
-	WebElement miniCartpopup;
 
 	@FindBy(xpath="//a[@class='action viewcart']")
 	WebElement miniCartCartBtn;
@@ -119,10 +118,9 @@ public class HomePage extends BasePage{
 		return signOutMessage.getText();
 	}
 
-	public void newsletterInput(String input)
+	public void newsletterInput(String email )
 	{
-		newsLetter.sendKeys(input);
-
+		newsLetter.sendKeys(email);
 	}
 
 	public void clickOnNewsSubBtn()
@@ -167,14 +165,8 @@ public class HomePage extends BasePage{
 	//mini cart
 	public void clickOnMiniCartBtn()
 	{
-
 		wait.until(ExpectedConditions.elementToBeClickable(minicartbtn));
 		minicartbtn.click();
-
-		if(miniCartpopup.isDisplayed() && miniCartpopup.isEnabled()==true)
-		{
-			miniCartCartBtn.click();
-		}
 	}
 
 	//Search

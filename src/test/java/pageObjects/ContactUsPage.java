@@ -48,9 +48,9 @@ public class ContactUsPage extends BasePage {
 	}
 
 
-	public void inputTeleField(String teleno)
+	public void inputTeleField(String phone)
 	{
-		teleField.sendKeys(teleno);
+		teleField.sendKeys(phone);
 	}
 
 

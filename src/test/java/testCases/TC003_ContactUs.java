@@ -18,9 +18,9 @@ public class TC003_ContactUs extends BaseClass {
 		Thread.sleep(2000);
 		ContactUsPage cnt = new ContactUsPage(driver);
 		
-		cnt.inputUserfield("Pawan");
-		cnt.inputEmailField("pawan."+randomString()+"@gmail.com");
-		cnt.inputTeleField(randomNumber());
+		cnt.inputUserfield(faker.randomFirstName());
+		cnt.inputEmailField(faker.randomEmail());
+		cnt.inputTeleField(faker.randomPhoneNum());
 		cnt.inputCommentField("This is for testing please ignore");
 	
 		Thread.sleep(2000);
