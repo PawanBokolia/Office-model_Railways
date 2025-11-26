@@ -7,11 +7,12 @@ import pageObjects.HomePage;
 import pageObjects.LoginAndCreateAccPage;
 import pageObjects.MyAccPage;
 import testBase.BaseClass;
+import utilities.Reusable_RetryAnalyzer;
 
 public class TC001_LoginAndLogOut extends BaseClass{
 
 
-	@Test
+	@Test(retryAnalyzer = Reusable_RetryAnalyzer.class ,groups="Login")
 	public void loginandLog() throws InterruptedException
 	{
 			HomePage hp =new HomePage(driver);

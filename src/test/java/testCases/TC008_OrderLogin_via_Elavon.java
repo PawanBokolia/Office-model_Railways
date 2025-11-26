@@ -57,8 +57,8 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass {
 
         Thread.sleep(5000);
 
-        WebElement frame = driver.findElement(By.xpath("//iframe[@class=\"sagepaysuiteserver_embed_low\"]"));
-        driver.switchTo().frame(frame);
+//        WebElement frame = driver.findElement(By.xpath("//iframe[@class=\"sagepaysuiteserver_embed_low\"]"));
+//        driver.switchTo().frame(frame);
 
         checkpg.enterCardNo("4929000000006");
         checkpg.enterExipreMonth("02");
