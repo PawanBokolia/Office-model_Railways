@@ -11,10 +11,10 @@ public class DataProviders {
 	public String [][]  getdata() throws IOException
 	{
 		String path =".\\testData\\Jerry_Logintestdata.xlsx";
-		ExcelUtility xlutilw = new ExcelUtility (path);
+		ExcelUtility excel = new ExcelUtility (path);
 		
-		int trowNum = xlutilw.getRowCount("Sheet1");
-		int tcellNum = xlutilw.getCellCount("Sheet1", 1);
+		int trowNum = excel.getRowCount("Sheet1");
+		int tcellNum = excel.getCellCount("Sheet1", 1);
 		
 		String logindata[][] = new String [trowNum][tcellNum];
 		
@@ -22,7 +22,7 @@ public class DataProviders {
 		{
 			for(int j=0; j<tcellNum; j++)
 			{
-				logindata[i-1][j] = xlutilw.getCellData("Sheet1", i, j);
+				logindata[i-1][j] = excel.getCellData("Sheet1", i, j);
 			}
 		}
 		return logindata;
