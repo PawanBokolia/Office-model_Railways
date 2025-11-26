@@ -22,14 +22,14 @@ import utilities.Reusable_FakerUtils;
 import utilities.Reusable_MouseKeyboardActions;
 
 public class BaseClass {
-//static 
-	public WebDriver driver;
+
+	static public WebDriver driver;
 	Properties p;
 	public Reusable_FakerUtils faker;
 	public Reusable_MouseKeyboardActions act;
 	
 	@Parameters({"os","br"})
-	@BeforeClass
+	@BeforeClass(groups="BaseClass")
 	public void setUp(String os,String br) throws IOException
 	{
 		FileReader file = new FileReader(".//src//test//resources//config.properties");
@@ -61,7 +61,7 @@ public class BaseClass {
 	}
 	
 	
-//	@AfterClass
+	@AfterClass
 	public void tearDown()
 	{
 		driver.quit();
