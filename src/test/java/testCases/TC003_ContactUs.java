@@ -13,6 +13,7 @@ public class TC003_ContactUs extends BaseClass {
 	public void Contactus() throws InterruptedException {
 		
 		HomePage hp = new HomePage();
+		hp.acceptCookies();
 		hp.clickOnContUS();
 		
 		Thread.sleep(2000);

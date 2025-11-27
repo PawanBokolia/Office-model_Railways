@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pageObjects.HomePage;
 import pageObjects.ProductListingPage;
 import testBase.BaseClass;
+import testBase.DriverManager;
 
 public class TC005_AddComapreAndDelete extends BaseClass{
 
@@ -18,7 +19,6 @@ public class TC005_AddComapreAndDelete extends BaseClass{
 		hp.moveOnCategoryScale();
 		hp.moveOnSubCategoryrolling();
 		hp.clickOnSubCategoryWagon();
-
 		Thread.sleep(2000);
 		ProductListingPage pl= new ProductListingPage();
 		pl.clickOnCompareBtn();
@@ -29,9 +29,10 @@ public class TC005_AddComapreAndDelete extends BaseClass{
 		Thread.sleep(3000);
 		String msg =pl.verificationComareMsg();
 		Assert.assertEquals(msg, "Compare Products");
-
+		
 
 		Thread.sleep(3000);
+		DriverManager.getDriver().navigate().back();
 		pl.clickOnClearBtn();
 		
 		Thread.sleep(2000);
