@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,8 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WishListPage extends BasePage{
 
 
-	public WishListPage(WebDriver driver) {
-		super(driver);
+	public WishListPage() {
+		super();
 
 	}
 

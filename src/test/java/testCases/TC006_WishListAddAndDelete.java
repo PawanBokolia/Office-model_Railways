@@ -15,11 +15,11 @@ public class TC006_WishListAddAndDelete extends BaseClass{
 	public void WishListAddAndDelete() throws InterruptedException
 	{
 		
-		HomePage hp = new HomePage(driver);
+		HomePage hp = new HomePage();
 		hp.acceptCookies();
 		hp.clickOnSignInbtn();
 		
-		LoginAndCreateAccPage lg = new LoginAndCreateAccPage(driver);
+		LoginAndCreateAccPage lg = new LoginAndCreateAccPage();
 		lg.enterEmailField("pawan.bokoliaqa@gmail.com");
 		lg.enterPassword("Pawanbokolia@95");
 		lg.clickOnLoginBtn();
@@ -29,11 +29,11 @@ public class TC006_WishListAddAndDelete extends BaseClass{
 		hp.clickOnSubCategoryWagon();
 
 		Thread.sleep(2000);
-		ProductListingPage pl= new ProductListingPage(driver);
+		ProductListingPage pl= new ProductListingPage();
 		
 		pl.clickOnWishListBtn();
 		
-		WishListPage wl= new WishListPage(driver);
+		WishListPage wl= new WishListPage();
 		Thread.sleep(3000);
 		String msg = wl.verifyWishListMsg();
 		Assert.assertEquals(msg, "BD Large Containers BR Bauxite & BR Crimson has been added to your Wish List. Click here to continue shopping.");

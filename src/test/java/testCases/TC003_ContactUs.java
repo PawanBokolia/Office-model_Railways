@@ -12,11 +12,11 @@ public class TC003_ContactUs extends BaseClass {
 	@Test
 	public void Contactus() throws InterruptedException {
 		
-		HomePage hp = new HomePage(driver);
+		HomePage hp = new HomePage();
 		hp.clickOnContUS();
 		
 		Thread.sleep(2000);
-		ContactUsPage cnt = new ContactUsPage(driver);
+		ContactUsPage cnt = new ContactUsPage();
 		
 		cnt.inputUserfield(faker.randomFirstName());
 		cnt.inputEmailField(faker.randomEmail());

@@ -11,7 +11,7 @@ public class TC015_SearchFuctionalty extends BaseClass{
 	@Test
 	public void SearchFuctionalty() throws InterruptedException
 	{
-		HomePage hp = new HomePage(driver);
+		HomePage hp = new HomePage();
 		hp.acceptCookies();
 		hp.enterTextOnSearchBar("BD Large Containers BR Bauxite & BR Crimson");
 		

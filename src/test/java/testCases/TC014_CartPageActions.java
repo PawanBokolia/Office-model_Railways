@@ -14,23 +14,23 @@ public class TC014_CartPageActions extends BaseClass{
 	@Test
 	public void cartPageActions() throws InterruptedException
 	{
-		HomePage hp = new HomePage(driver);		
+		HomePage hp = new HomePage();		
 		hp.acceptCookies();
 		hp.moveOnCategoryScale();
 		hp.moveOnSubCategoryrolling();		
 		hp.clickOnSubCategoryWagon();
 
 
-		ProductListingPage pl= new ProductListingPage(driver);
+		ProductListingPage pl= new ProductListingPage();
 		pl.clickOnSingleProduct();
 
-		ProductDetailPage pd = new ProductDetailPage(driver);
+		ProductDetailPage pd = new ProductDetailPage();
 		pd.clickOnAddtoCartBtn();
 
 		Thread.sleep(4000);
 		hp.clickOnMiniCartBtn();
 		
-		CartPage cp = new CartPage(driver);
+		CartPage cp = new CartPage();
 		cp.changeProQuantity("5");
 		cp.clickOnUpdateCartBtn();
 		

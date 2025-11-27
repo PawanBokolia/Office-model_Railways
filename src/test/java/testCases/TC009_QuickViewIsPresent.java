@@ -13,14 +13,14 @@ public class TC009_QuickViewIsPresent extends BaseClass {
 	public void quickView() throws InterruptedException
 	{
 		
-			HomePage hp = new HomePage(driver);		
+			HomePage hp = new HomePage();		
 			hp.acceptCookies();
 			hp.moveOnCategoryScale();
 			hp.moveOnSubCategoryrolling();		
 			hp.clickOnSubCategoryWagon();
 
 
-			ProductListingPage pl= new ProductListingPage(driver);
+			ProductListingPage pl= new ProductListingPage();
 			pl.clickOnQuickViewBtn();
 
 			Thread.sleep(3000);

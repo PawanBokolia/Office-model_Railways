@@ -11,32 +11,33 @@ import pageObjects.HomePage;
 import pageObjects.ProductDetailPage;
 import pageObjects.ProductListingPage;
 import testBase.BaseClass;
+import testBase.DriverManager;
 
 public class TC008_OrderLogin_via_Elavon extends BaseClass {
 
     @Test
     public void OrderLogin() throws InterruptedException {
 
-        HomePage hp = new HomePage(driver);
+        HomePage hp = new HomePage();
         hp.acceptCookies();
         hp.moveOnCategoryScale();
         hp.moveOnSubCategoryrolling();
         hp.clickOnSubCategoryWagon();
 
 
-        ProductListingPage pl = new ProductListingPage(driver);
+        ProductListingPage pl = new ProductListingPage();
         pl.clickOnSingleProduct();
 
-        ProductDetailPage pd = new ProductDetailPage(driver);
+        ProductDetailPage pd = new ProductDetailPage();
         pd.clickOnAddtoCartBtn();
 
         Thread.sleep(3000);
         hp.clickOnMiniCartBtn();
 
-        CartPage cp = new CartPage(driver);
+        CartPage cp = new CartPage();
         cp.clickOnCheckoutBtn();
 
-        CheckOutPage checkpg = new CheckOutPage(driver);
+        CheckOutPage checkpg = new CheckOutPage();
 
         Thread.sleep(2000);
         checkpg.emailInputFild("pawan.bokoliaqa@gmail.com");
@@ -71,7 +72,7 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass {
         checkpg.inputChallengeField("challenge");
         checkpg.clickOnNextButton();
 
-        driver.switchTo().defaultContent();
+        DriverManager.getDriver().switchTo().defaultContent();
 
         String conf = checkpg.orderConfirmMsg();
         Assert.assertEquals(conf, "Thank you for your purchase!");
