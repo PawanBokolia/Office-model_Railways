@@ -19,7 +19,6 @@ public class TC009_QuickViewIsPresent extends BaseClass {
 			hp.moveOnSubCategoryrolling();		
 			hp.clickOnSubCategoryWagon();
 
-
 			ProductListingPage pl= new ProductListingPage();
 			pl.clickOnQuickViewBtn();
 

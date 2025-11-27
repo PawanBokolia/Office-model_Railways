@@ -2,7 +2,6 @@ package utilities;
 
 import java.time.Duration;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,14 +26,6 @@ public class Reusable_waitUtils {
 	public void elementPresent(WebElement locator)   			 //work normally in POM 
 	{
 		wait.until(ExpectedConditions.visibilityOf(locator));
-		locator.click();
-	}
-
-	public void elementPresentDynamic(WebElement locator)    	//helps in dynamic dom //refreshed 
-	{
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By) locator));
-		locator.click();
-		
 	}
 
 	public void elementStale(WebElement locator)  				//if stale happens multiple time

@@ -1,28 +1,23 @@
 package pageObjects;
 
-import java.time.Duration;
-
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage{
 
 
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Actions act = new Actions(driver);
-
 
 	public HomePage()
 	{
 		super();
 	}
 
+	
 	//cookies
 	@FindBy(css="button[id='btn-cookie-allow']")
 	WebElement cookies;
@@ -125,7 +120,7 @@ public class HomePage extends BasePage{
 
 	public void clickOnNewsSubBtn()
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(newsLettersubBtn)).click();
+		wait.elementClickable(newsLettersubBtn);
 	}
 
 	public String  newsVerifMsg()
@@ -145,27 +140,28 @@ public class HomePage extends BasePage{
 
 	public void moveOnCategoryScale()
 	{
-		wait.until(ExpectedConditions.visibilityOf(categoryScale));
+		wait.elementPresent(categoryScale);
 		act.moveToElement(categoryScale).perform();
 	}
 
 	public void moveOnSubCategoryrolling()
 	{
-		wait.until(ExpectedConditions.visibilityOf(subCategoryRolling));
+		wait.elementPresent(subCategoryRolling);
 		act.moveToElement(subCategoryRolling).perform();
+		
 	}
 
 	public void clickOnSubCategoryWagon()
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(subCategoryWagon));
-		js.executeScript("arguments[0].click();", subCategoryWagon);
+		wait.elementClickable(subCategoryWagon);
+//		js.executeScript("arguments[0].click();", subCategoryWagon);
 	}
 
 	
 	//mini cart
 	public void clickOnMiniCartBtn()
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(minicartbtn));
+		wait.elementClickable(minicartbtn);
 		minicartbtn.click();
 	}
 
@@ -178,7 +174,7 @@ public class HomePage extends BasePage{
 
 	public boolean verifySearchResult()
 	{
-		wait.until(ExpectedConditions.visibilityOf(searchResult));
+		wait.elementPresent(searchResult);
 		return searchResult.isDisplayed();
 	}
 

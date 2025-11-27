@@ -79,7 +79,7 @@ public class ProductListingPage extends BasePage{
 	}
 
 	public void clickOnClearBtn()
-	{
+	{ 														
 
 		wait.until(ExpectedConditions.elementToBeClickable(CompareClearbtn)).click();
 	}
@@ -110,7 +110,7 @@ public class ProductListingPage extends BasePage{
 
 	public void clickOnQuickViewBtn()
 	{
-		//		act.moveToElement(quickViewBtn).click().perform();
+//				act.moveToElement(quickViewBtn).click().perform();
 		js.executeScript("arguments[0].click();", quickViewBtn);
 	}
 

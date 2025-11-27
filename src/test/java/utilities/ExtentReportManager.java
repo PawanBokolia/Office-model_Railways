@@ -1,5 +1,8 @@
 package utilities;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -70,6 +73,17 @@ public class ExtentReportManager implements ITestListener {
 	    @Override
 	    public void onFinish(ITestContext context) {
 	        extent.flush();
+	        String pathOfExtentReport = System.getProperty("user.dir")+"\\reports\\"+repName; 			//change the path for other folder
+		    File extentReport = new File(pathOfExtentReport);
+		    try 
+		    {
+		    	Desktop.getDesktop().browse(extentReport.toURI());
+		    }
+		    catch(IOException e )
+		    {
+		    	e.printStackTrace();
+		    }
+
 	    }
 	}
 
