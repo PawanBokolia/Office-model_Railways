@@ -9,25 +9,25 @@ public class TC017_CheckOut extends BaseClass {
 
     @Test
     public void heckOut() throws InterruptedException {
-        HomePage hp = new HomePage(driver);
+        HomePage hp = new HomePage();
         hp.acceptCookies();
         hp.moveOnCategoryScale();
         hp.moveOnSubCategoryrolling();
         hp.clickOnSubCategoryWagon();
 
-        ProductListingPage pl = new ProductListingPage(driver);
+        ProductListingPage pl = new ProductListingPage();
         pl.clickOnSingleProduct();
 
-        ProductDetailPage pd = new ProductDetailPage(driver);
+        ProductDetailPage pd = new ProductDetailPage();
         pd.clickOnAddtoCartBtn();
 
         Thread.sleep(3000);
         hp.clickOnMiniCartBtn();
 
-        CartPage cp = new CartPage(driver);
+        CartPage cp = new CartPage();
         cp.clickOnCheckoutBtn();
 
-        CheckOutPage checkpg = new CheckOutPage(driver);
+        CheckOutPage checkpg = new CheckOutPage();
 
         Thread.sleep(2000);
         checkpg.emailInputFild("pawan.bokoliaqa@gmail.com");

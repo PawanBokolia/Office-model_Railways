@@ -14,13 +14,13 @@ public class TC011_Pagination extends BaseClass{
 	{
 		int a  =0;
 		try {
-			HomePage hp = new HomePage(driver);		
+			HomePage hp = new HomePage();		
 			hp.acceptCookies();
 			hp.moveOnCategoryScale();
 			hp.moveOnSubCategoryrolling();		
 			hp.clickOnSubCategoryWagon();
 
-			ProductListingPage pl= new ProductListingPage(driver);
+			ProductListingPage pl= new ProductListingPage();
 			
 			while(a<5)
 			{

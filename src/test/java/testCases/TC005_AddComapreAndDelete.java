@@ -13,14 +13,14 @@ public class TC005_AddComapreAndDelete extends BaseClass{
 	public void compareAndDelete () throws InterruptedException
 	{
 		
-		HomePage hp = new HomePage(driver);
+		HomePage hp = new HomePage();
 		hp.acceptCookies();
 		hp.moveOnCategoryScale();
 		hp.moveOnSubCategoryrolling();
 		hp.clickOnSubCategoryWagon();
 
 		Thread.sleep(2000);
-		ProductListingPage pl= new ProductListingPage(driver);
+		ProductListingPage pl= new ProductListingPage();
 		pl.clickOnCompareBtn();
 		
 		Thread.sleep(3000);
@@ -30,7 +30,6 @@ public class TC005_AddComapreAndDelete extends BaseClass{
 		String msg =pl.verificationComareMsg();
 		Assert.assertEquals(msg, "Compare Products");
 
-		driver.navigate().back();
 
 		Thread.sleep(3000);
 		pl.clickOnClearBtn();

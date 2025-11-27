@@ -1,11 +1,7 @@
 package utilities;
 
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -19,104 +15,62 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import testBase.BaseClass;
 
-public class ExtentReportManager implements ITestListener{
-	
-		public ExtentSparkReporter sparkReporter;   //UI of the report 
-		public ExtentReports extent;				//populate common info on the report 
-		public ExtentTest test; 					//create test case entries in the report and update status of the test methods
-		
-		String repName;
-		
-		public void onStart(ITestContext testContext) {
-			
-		/*	SimpleDateFormat df= new SimpleDateFormat("yyyy.MM.ss.HH.mm.ss");
-			Date dt = new Date();
-			String currentdatetimestamp=df.format(dt);
-		*/	
-			
-			String timeStamp =new SimpleDateFormat("yyyy.MM.dd" +"_" +"HH.mm.ss").format(new Date());
-			
-			repName ="test-Report-" + timeStamp +".html";
-			sparkReporter = new ExtentSparkReporter(".\\reports\\"+repName);			//change the path for other folder
-			
-			
-			
-			sparkReporter.config().setDocumentTitle("Model_Railways");
-			sparkReporter.config().setReportName("Model_Railways functionality Testing");
-			sparkReporter.config().setTheme(Theme.DARK);
-			
-			extent = new ExtentReports();
-			extent.attachReporter(sparkReporter);
-			extent.setSystemInfo("Application" , "Model_railways");
-			extent.setSystemInfo("Module", "Admin");
-			extent.setSystemInfo("Sub Module", "Customers");
-			extent.setSystemInfo("User Name", System.getProperty("user.name"));
-			extent.setSystemInfo("Environment", "QA");
-			
-			String os = testContext.getCurrentXmlTest().getParameter("os");
-			extent.setSystemInfo("Operating System", os); 	 
-			
-			String browser = testContext.getCurrentXmlTest().getParameter("browser");
-			extent.setSystemInfo("Browser", browser);
-			
-			List<String> includedGroups = testContext.getCurrentXmlTest().getIncludedGroups();
-			if(!includedGroups.isEmpty()) {
-			extent.setSystemInfo("Groups", includedGroups.toString());
-			}
-		  }
-		
-		
-		public void onTestSuccess(ITestResult result) 
-		{
-		    
-			test = extent.createTest(result.getTestClass().getName());  							//create a new entry in the report 
-			test.assignCategory(result.getMethod().getGroups());             					//to display groups in report
-			test.log(Status.PASS,result.getName()+ "got successfully executed");				//update status pass/fail/skipped
-		}
-		
-		 public void onTestFailure(ITestResult result) 
-		 {
-			 test = extent.createTest(result.getTestClass().getName()); 
-			 test.assignCategory(result.getMethod().getGroups());
-			 
-			 test.log(Status.FAIL,result.getName()+"got failed");
-			 test.log(Status.INFO,result.getThrowable().getMessage());
-			 try {
-				 String imgPath = new BaseClass().captureScreen(result.getName());
-				 test.addScreenCaptureFromPath(imgPath);
-			 }
-			 catch(IOException e1) 
-			 {
-				e1.printStackTrace();
-			 }
-	     }
-		
-		  public void onTestSkipped(ITestResult result) 
-		  {
-			 test = extent.createTest(result.getTestClass().getName());
-			 test.assignCategory(result.getMethod().getGroups());
-			 test.log(Status.SKIP, result.getName()+"got skipped");
-			 test.log(Status.INFO, result.getThrowable().getMessage());
-		
-		  }
+public class ExtentReportManager implements ITestListener {
 
-		  public void onFinish(ITestContext context)
-		  {
-			    extent.flush();
-			    
-			    String pathOfExtentReport = System.getProperty("user.dir")+"\\reports\\"+repName; 			//change the path for other folder
-			    File extentReport = new File(pathOfExtentReport);
-			    try 
-			    {
-			    	Desktop.getDesktop().browse(extentReport.toURI());
-			    }
-			    catch(IOException e )
-			    {
-			    	e.printStackTrace();
-			    }
-		  }
-		  
-	
+	    public ExtentSparkReporter sparkReporter;
+	    public ExtentReports extent;
+	    public ExtentTest test;
+	    String repName;
+
+	    @Override
+	    public void onStart(ITestContext testContext) {
+
+	        String timeStamp = new SimpleDateFormat("yyyy.MM.dd_HH.mm.ss").format(new Date());
+	        repName = "Test-Report-" + timeStamp + ".html";
+
+	        sparkReporter = new ExtentSparkReporter(".\\reports\\" + repName);
+	        sparkReporter.config().setDocumentTitle("Automation Report");
+	        sparkReporter.config().setReportName("Functional Testing");
+	        sparkReporter.config().setTheme(Theme.DARK);
+
+	        extent = new ExtentReports();
+	        extent.attachReporter(sparkReporter);
+	    }
+
+	    @Override
+	    public void onTestSuccess(ITestResult result) {
+	        test = extent.createTest(result.getMethod().getMethodName());
+	        test.assignCategory(result.getMethod().getGroups());
+	        test.log(Status.PASS, "Test Passed");
+	    }
+
+	    @Override
+	    public void onTestFailure(ITestResult result) {
+	        test = extent.createTest(result.getMethod().getMethodName());
+	        test.assignCategory(result.getMethod().getGroups());
+	        test.log(Status.FAIL, "Test Failed");
+	        test.log(Status.INFO, result.getThrowable().getMessage());
+
+	        try {
+	            BaseClass base = (BaseClass) result.getInstance();
+	            String imgPath = base.captureScreen(result.getMethod().getMethodName());
+	            test.addScreenCaptureFromPath(imgPath);
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
+
+	    @Override
+	    public void onTestSkipped(ITestResult result) {
+	        test = extent.createTest(result.getMethod().getMethodName());
+	        test.assignCategory(result.getMethod().getGroups());
+	        test.log(Status.SKIP, "Test Skipped");
+	    }
+
+	    @Override
+	    public void onFinish(ITestContext context) {
+	        extent.flush();
+	    }
 	}
-	
-	
+
+

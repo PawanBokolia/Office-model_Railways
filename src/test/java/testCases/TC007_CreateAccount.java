@@ -13,12 +13,12 @@ public class TC007_CreateAccount extends BaseClass{
 	@Test
 	public void CreateAccount() throws InterruptedException
 	{
-		HomePage hp = new HomePage(driver);
+		HomePage hp = new HomePage();
 		hp.acceptCookies();
 		hp.clickOnSignInbtn();
 		
 		
-		LoginAndCreateAccPage accPg = new LoginAndCreateAccPage(driver);
+		LoginAndCreateAccPage accPg = new LoginAndCreateAccPage();
 		accPg.clickOnCreateAccbtn();
 		accPg.fillEmailfield(faker.randomEmail());
 		accPg.clickOnNewsCheckBox();	
@@ -42,7 +42,7 @@ public class TC007_CreateAccount extends BaseClass{
 		accPg.clickOnContBtn();
 		
 		Thread.sleep(3000);
-		MyAccPage mp = new MyAccPage(driver);
+		MyAccPage mp = new MyAccPage();
 		String verify = mp.verifyUniversalMsg();
 		
 		Assert.assertEquals(verify, "Thank you for registering with Model Railways Direct Ltd.");

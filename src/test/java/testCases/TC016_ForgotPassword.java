@@ -11,10 +11,10 @@ public class TC016_ForgotPassword extends BaseClass{
 	@Test
 	public void forgotPassword(){
 		
-		HomePage hp =new HomePage(driver);
+		HomePage hp =new HomePage();
 		hp.acceptCookies();
 		hp.clickOnSignInbtn();
-		LoginAndCreateAccPage lg = new LoginAndCreateAccPage(driver);
+		LoginAndCreateAccPage lg = new LoginAndCreateAccPage();
 		lg.clickOnForgotPwd();
 		lg.inputFrgPwdField("pawan.bokoliaqa@gmail.com");
 		lg.clickOnForgotContBtn();

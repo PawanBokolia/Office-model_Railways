@@ -12,13 +12,13 @@ public class TC010_ProductPerPage extends BaseClass {
 	@Test
 	public void productPerPage() throws InterruptedException {
 		
-		HomePage hp = new HomePage(driver);		
+		HomePage hp = new HomePage();		
 		hp.acceptCookies();
 		hp.moveOnCategoryScale();
 		hp.moveOnSubCategoryrolling();		
 		hp.clickOnSubCategoryWagon();
 		
-		ProductListingPage pl= new ProductListingPage(driver);
+		ProductListingPage pl= new ProductListingPage();
 		
 		pl.checkProductPerPage();
 		

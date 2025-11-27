@@ -18,9 +18,9 @@ public class HomePage extends BasePage{
 	Actions act = new Actions(driver);
 
 
-	public HomePage(WebDriver driver)
+	public HomePage()
 	{
-		super(driver);
+		super();
 	}
 
 	//cookies

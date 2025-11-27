@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -18,8 +17,8 @@ public class ProductListingPage extends BasePage{
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	Actions act = new Actions (driver);
 
-	public ProductListingPage(WebDriver driver) {
-		super(driver);
+	public ProductListingPage() {
+		super();
 
 	}
 

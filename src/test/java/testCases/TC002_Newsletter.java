@@ -13,7 +13,7 @@ public class TC002_Newsletter extends BaseClass{
 	{
 		try {
 			
-			HomePage hp = new HomePage(driver);
+			HomePage hp = new HomePage();
 			hp.acceptCookies();
 			hp.newsletterInput(faker.randomEmail());
 

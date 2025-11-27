@@ -11,9 +11,7 @@ import java.util.Properties;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -23,50 +21,48 @@ import utilities.Reusable_MouseKeyboardActions;
 
 public class BaseClass {
 
-	static public WebDriver driver;
+	
 	Properties p;
 	public Reusable_FakerUtils faker;
 	public Reusable_MouseKeyboardActions act;
 	
 	@Parameters({"os","br"})
 	@BeforeClass(groups="BaseClass")
-	public void setUp(String os,String br) throws IOException
+	public void setUp(String os,String br,ITestContext context) throws IOException
 	{
 		FileReader file = new FileReader(".//src//test//resources//config.properties");
 		p=new Properties();
 		p.load(file);
 		
-		ChromeOptions option = new ChromeOptions();
-//		option.addArguments("--headless");
-//		option.addArguments("--incognito");
+		// Create the driver
+	    WebDriver driverInstance = DriverFactory.createInstance(br);
+	    
+	    //Store in ThreadLocal
+	    DriverManager.setDriver(driverInstance);
+	    
+	    // Set driver to ITestContext for listeners
+	    context.setAttribute("driver",  DriverManager.getDriver());		
 		
+	    faker = new Reusable_FakerUtils();
 		
-		switch (br.toLowerCase()) 
-		{
-			case "chrome" : driver = new ChromeDriver(option);	break;
-			case "firefox": driver = new FirefoxDriver();	    break;
-
-			default: System.out.println("invalid browser name"); return;
-		}
+	    DriverManager.getDriver().get(p.getProperty("AppURL2"));
+	    DriverManager.getDriver().manage().window().maximize();
+	    DriverManager.getDriver().manage().deleteAllCookies();	
+	    DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
-		faker = new Reusable_FakerUtils();
-		
-		
-		driver.get(p.getProperty("AppURL2"));
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();	
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
-		
-	}
 	
+	}
 	
 	@AfterClass
-	public void tearDown()
+	 public void tearDown() 
 	{
-		driver.quit();
+		DriverManager.getDriver().quit();
+		if (DriverManager.getDriver() != null) 
+	        {
+	            DriverManager.getDriver().quit();
+	            DriverManager.unload();
+	        }  
 	}
-	
 	
 	//ScreenShot 
 	public String captureScreen(String tname) throws IOException
@@ -74,7 +70,7 @@ public class BaseClass {
 		
 		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		
-		TakesScreenshot takesScreenshot = (TakesScreenshot)driver;
+		TakesScreenshot takesScreenshot = (TakesScreenshot) DriverManager.getDriver();
 		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 		
 		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\"+ tname +"_"+timeStamp+".png";

@@ -14,9 +14,9 @@ public class ContactUsPage extends BasePage {
 	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
-	public ContactUsPage(WebDriver driver) 
+	public ContactUsPage() 
 	{
-		super(driver);
+		super();
 	}
 
 	@FindBy(id="name")
