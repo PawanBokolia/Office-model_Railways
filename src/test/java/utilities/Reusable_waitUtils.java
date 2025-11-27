@@ -18,8 +18,16 @@ public class Reusable_waitUtils {
 
 	public void elementClickable(WebElement locator)
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(locator));
-		locator.click();
+		try 
+		{
+			wait.until(ExpectedConditions.elementToBeClickable(locator));
+			locator.click();
+		}
+		catch(Exception e)
+		{
+			System.out.println("stale element exception");
+			wait.until(ExpectedConditions.refreshed((ExpectedConditions.elementToBeClickable(locator)))).click();
+		}
 	}
 
 
@@ -34,8 +42,13 @@ public class Reusable_waitUtils {
 	}
 
 	
-	public void alertpresent(WebElement locator)  				//if stale happens multiple time
+	public void alertAccept(WebElement locator)  				//if stale happens multiple time
 	{
 		wait.until(ExpectedConditions.alertIsPresent()).accept();
+	}
+	
+	public void alertCancel(WebElement locator)  				//if stale happens multiple time
+	{
+		wait.until(ExpectedConditions.alertIsPresent()).dismiss();
 	}
 }
