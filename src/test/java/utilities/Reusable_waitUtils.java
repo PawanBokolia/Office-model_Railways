@@ -47,7 +47,7 @@ public class Reusable_waitUtils {
 		wait.until(ExpectedConditions.alertIsPresent()).accept();
 	}
 	
-	public void alertCancel(WebElement locator)  				//if stale happens multiple time
+	public void alertdismiss(WebElement locator)  				//if stale happens multiple time
 	{
 		wait.until(ExpectedConditions.alertIsPresent()).dismiss();
 	}

@@ -1,7 +1,5 @@
 package testCases;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -23,36 +21,45 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass {
         hp.moveOnCategoryScale();
         hp.moveOnSubCategoryrolling();
         hp.clickOnSubCategoryWagon();
-
-
+        
+        logger.info("step1 ");
         ProductListingPage pl = new ProductListingPage();
         pl.clickOnSingleProduct();
-
+        
+        logger.info("step2 ");
         ProductDetailPage pd = new ProductDetailPage();
         pd.clickOnAddtoCartBtn();
 
+        logger.info("step3 ");
         Thread.sleep(3000);
         hp.clickOnMiniCartBtn();
 
+        logger.info("step4 ");
         CartPage cp = new CartPage();
         cp.clickOnCheckoutBtn();
 
         CheckOutPage checkpg = new CheckOutPage();
 
+        logger.info("step5 ");
         Thread.sleep(2000);
         checkpg.emailInputFild("pawan.bokoliaqa@gmail.com");
-
+        
+        logger.info("step6 ");
         Thread.sleep(4000);
         checkpg.passwordInputField("Pawanbokolia@95");
-
+        
+        logger.info("step7 ");
         checkpg.clickOnLoginBtn();
-
+       
+        logger.info("step8 ");
         Thread.sleep(3000);
         checkpg.selectShipingMethod();
 
+        logger.info("step9 ");
         Thread.sleep(3000);
         checkpg.selectElavonOption();
-
+        
+        logger.info("step10 ");
         Thread.sleep(3000);
         checkpg.clickOnOrderPlaceBtn();
 

@@ -32,7 +32,7 @@
 																				-->																	
 		
 	
-		<class name="testCases.TC005_AddComapreAndDelete"/> 
+		<class name="testCases.TC008_OrderLogin_via_Elavon"/> 
 		
     </classes>
   </test> <!-- Test -->
