@@ -16,12 +16,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import org.apache.logging.log4j.LogManager;			//log
+import org.apache.logging.log4j.Logger;				//log
+
 import utilities.Reusable_FakerUtils;
 import utilities.Reusable_MouseKeyboardActions;
 
 public class BaseClass {
 
-	
+	public Logger logger;
 	Properties p;
 	public Reusable_FakerUtils faker;
 	public Reusable_MouseKeyboardActions act;
@@ -30,9 +33,15 @@ public class BaseClass {
 	@BeforeClass(groups="BaseClass")
 	public void setUp(String os,String br,ITestContext context) throws IOException
 	{
+		
+		logger = LogManager.getLogger(this.getClass());
+		logger.info("LOGGER TEST: BaseClass initialized");
+
 		FileReader file = new FileReader(".//src//test//resources//config.properties");
 		p=new Properties();
 		p.load(file);
+		
+		
 		
 		// Create the driver
 	    WebDriver driverInstance = DriverFactory.createInstance(br);

@@ -19,7 +19,6 @@ public class TC012_WishListBTn_onProduct extends BaseClass{
 
 			hp.clickOnSignInbtn();
 			
-			System.out.println("login");
 			LoginAndCreateAccPage lg = new LoginAndCreateAccPage();
 			lg.enterEmailField("pawan.bokoliaqa@gmail.com");
 			lg.enterPassword("Pawanbokolia@95");

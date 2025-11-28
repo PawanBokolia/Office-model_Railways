@@ -19,6 +19,7 @@ public class TC005_AddComapreAndDelete extends BaseClass{
 		hp.moveOnCategoryScale();
 		hp.moveOnSubCategoryrolling();
 		hp.clickOnSubCategoryWagon();
+		
 		Thread.sleep(2000);
 		ProductListingPage pl= new ProductListingPage();
 		pl.clickOnCompareBtn();

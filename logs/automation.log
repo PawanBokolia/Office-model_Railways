@@ -1,0 +1,18 @@
+16:54:23.131 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - LOGGER TEST: BaseClass initialized
+16:54:48.932 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step1 
+16:54:54.478 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step2 
+16:54:54.584 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step3 
+16:55:08.040 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step4 
+16:55:14.652 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step5 
+16:55:17.148 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step6 
+16:55:21.335 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step7 
+16:55:21.497 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step8 
+17:04:47.301 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - LOGGER TEST: BaseClass initialized
+17:05:10.474 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step1 
+17:05:16.455 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step2 
+17:05:16.535 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step3 
+17:05:30.299 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step4 
+17:05:40.609 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step5 
+17:05:42.853 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step6 
+17:05:47.012 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step7 
+17:05:47.175 [main] INFO  testCases.TC008_OrderLogin_via_Elavon - step8 
