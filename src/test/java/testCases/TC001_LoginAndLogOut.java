@@ -20,12 +20,9 @@ public class TC001_LoginAndLogOut extends BaseClass{
 			hp.clickOnSignInbtn();
 
 			LoginAndCreateAccPage lg = new LoginAndCreateAccPage();
-			lg.enterEmailField("pawan.bokoliaqa@gmail.com");
-			lg.enterPassword("Pawanbokolia@95");
-			lg.clickOnLoginBtn();
+			lg.login(p.getProperty("username"), p.getProperty("password"));
 
 			Thread.sleep(3000);
-			
 			MyAccPage mp =new MyAccPage();
 
 			mp.clickonloginmenu();

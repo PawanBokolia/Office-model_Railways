@@ -78,21 +78,14 @@ public class LoginAndCreateAccPage extends BasePage{
 	@FindBy(css="button.action.submit.primary")
 	WebElement forgotContBtn;
 	
-	
-	public void enterEmailField(String email)
+
+	public void login(String password, String email)
 	{
 		emailField.sendKeys(email);
-	}
-	
-	public void enterPassword(String password)
-	{
 		passwordField.sendKeys(password);
-	}
-	
-	public void clickOnLoginBtn()
-	{
 		loginbtn.click();
 	}
+	
 	
 	public void clickOnCreateAccbtn()
 	{

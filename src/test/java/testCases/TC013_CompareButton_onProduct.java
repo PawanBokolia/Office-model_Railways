@@ -19,9 +19,7 @@ public class TC013_CompareButton_onProduct extends BaseClass{
 		hp.clickOnSignInbtn();
 
 		LoginAndCreateAccPage lg = new LoginAndCreateAccPage();
-		lg.enterEmailField("pawan.bokoliaqa@gmail.com");
-		lg.enterPassword("Pawanbokolia@95");
-		lg.clickOnLoginBtn();
+		lg.login(p.getProperty("username"), p.getProperty("password"));
 
 		hp.moveOnCategoryScale();
 		hp.moveOnSubCategoryrolling();		
