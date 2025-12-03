@@ -13,9 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductListingPage extends BasePage{
 
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	Actions act = new Actions (driver);
+
 
 	public ProductListingPage() {
 		super();
@@ -70,7 +68,7 @@ public class ProductListingPage extends BasePage{
 
 	public void clickOnCompareListBtn()
 	{
-		js.executeScript("arguments[0].click();", comparelistBtn);	
+		js.jsClick(comparelistBtn);	
 	}
 
 	public String verificationComareMsg()
@@ -81,12 +79,12 @@ public class ProductListingPage extends BasePage{
 	public void clickOnClearBtn()
 	{ 														
 
-		wait.until(ExpectedConditions.elementToBeClickable(CompareClearbtn)).click();
+		wait.elementClickable(CompareClearbtn);
 	}
 
 	public void clickOnOkbtnPopUp()
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(acceptClearCompare)).click();
+		wait.elementClickable(acceptClearCompare);
 	}
 
 	public String verfiyClearComparisonList()
@@ -110,8 +108,8 @@ public class ProductListingPage extends BasePage{
 
 	public void clickOnQuickViewBtn()
 	{
-//				act.moveToElement(quickViewBtn).click().perform();
-		js.executeScript("arguments[0].click();", quickViewBtn);
+//		act.moveToElement(quickViewBtn).click().perform();
+		js.jsClick(quickViewBtn);
 	}
 
 	public boolean checkQuickViewPopUp()
@@ -132,7 +130,7 @@ public class ProductListingPage extends BasePage{
 
 	public void clickOneachPage() 
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(nextPgBtn));
+		wait.elementWait(nextPgBtn);
 		nextPgBtn.click();
 	}
 

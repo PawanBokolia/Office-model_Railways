@@ -16,9 +16,7 @@ public class TC005_AddComapreAndDelete extends BaseClass{
 		
 		HomePage hp = new HomePage();
 		hp.acceptCookies();
-		hp.moveOnCategoryScale();
-		hp.moveOnSubCategoryrolling();
-		hp.clickOnSubCategoryWagon();
+		hp.moveToWagonLoads();
 		
 		Thread.sleep(2000);
 		ProductListingPage pl= new ProductListingPage();

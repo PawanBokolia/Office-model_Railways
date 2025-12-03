@@ -20,7 +20,7 @@ public class Reusable_JavaScriptExecutor {
 	
 	public void scrollTo(WebElement element)
 	{
-		js.executeScript("arguments[0].scrollIntoView();", element);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
 	}
 
 	

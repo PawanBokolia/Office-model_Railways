@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pageObjects.HomePage;
 import pageObjects.ProductListingPage;
 import testBase.BaseClass;
+import utilities.Reusable_Screenshots;
 
 public class TC010_ProductPerPage extends BaseClass {
 
@@ -14,9 +15,7 @@ public class TC010_ProductPerPage extends BaseClass {
 		
 		HomePage hp = new HomePage();		
 		hp.acceptCookies();
-		hp.moveOnCategoryScale();
-		hp.moveOnSubCategoryrolling();		
-		hp.clickOnSubCategoryWagon();
+		hp.moveToWagonLoads();
 		
 		ProductListingPage pl= new ProductListingPage();
 		
@@ -30,6 +29,8 @@ public class TC010_ProductPerPage extends BaseClass {
 		{
 			Assert.assertTrue(true);
 		}
+		
+		Reusable_Screenshots.Screenshots("TC010_ProductPerPage");
 		
 		
 		

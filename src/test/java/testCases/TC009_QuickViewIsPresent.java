@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pageObjects.HomePage;
 import pageObjects.ProductListingPage;
 import testBase.BaseClass;
+import utilities.Reusable_Screenshots;
 
 public class TC009_QuickViewIsPresent extends BaseClass {
 
@@ -15,9 +16,7 @@ public class TC009_QuickViewIsPresent extends BaseClass {
 		
 			HomePage hp = new HomePage();		
 			hp.acceptCookies();
-			hp.moveOnCategoryScale();
-			hp.moveOnSubCategoryrolling();		
-			hp.clickOnSubCategoryWagon();
+			hp.moveToWagonLoads();
 
 			ProductListingPage pl= new ProductListingPage();
 			pl.clickOnQuickViewBtn();
@@ -25,6 +24,7 @@ public class TC009_QuickViewIsPresent extends BaseClass {
 			Thread.sleep(3000);
 			boolean verify =pl.checkQuickViewPopUp();
 			Assert.assertTrue(verify);
+			Reusable_Screenshots.Screenshots("TC009_QuickViewIsPresent");
 			
 		}
 

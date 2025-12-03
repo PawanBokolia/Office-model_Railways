@@ -13,6 +13,7 @@ public class LoginAndCreateAccPage extends BasePage{
 		super();
 	}
 
+	//login
 	@FindBy(id="email")
 	WebElement emailField;
 	
@@ -22,11 +23,11 @@ public class LoginAndCreateAccPage extends BasePage{
 	@FindBy(css ="button[class=\"action login primary\"]")
 	WebElement loginbtn;
 	
+	
+	//create account page 	
 	@FindBy(css="a[class='action create primary']")
 	WebElement createAccBtn;
 	
-	
-	//create account page 
 	@FindBy(name="email")
 	WebElement emailInput;
 	
@@ -48,6 +49,7 @@ public class LoginAndCreateAccPage extends BasePage{
 	@FindBy(xpath="//select[@title='Country']")
 	WebElement countryDrp;
 	
+	
 	//address field for a word
 	@FindBy(xpath="//input[@placeholder='Start typing your address']")
 	WebElement addressSearchfield;
@@ -68,6 +70,7 @@ public class LoginAndCreateAccPage extends BasePage{
 	@FindBy(css="button[title='Continue']")
 	WebElement contbtn;
 	
+	
 	//forgot password
 	@FindBy(css="a[class='action remind']")
 	WebElement forgotPwdLink;
@@ -78,8 +81,10 @@ public class LoginAndCreateAccPage extends BasePage{
 	@FindBy(css="button.action.submit.primary")
 	WebElement forgotContBtn;
 	
-
-	public void login(String password, String email)
+	
+	
+	//Login	
+	public void login(String email, String password)
 	{
 		emailField.sendKeys(email);
 		passwordField.sendKeys(password);

@@ -7,6 +7,7 @@ import pageObjects.HomePage;
 import pageObjects.LoginAndCreateAccPage;
 import pageObjects.MyAccPage;
 import testBase.BaseClass;
+import utilities.Reusable_Screenshots;
 
 public class TC007_CreateAccount extends BaseClass{
 
@@ -46,6 +47,7 @@ public class TC007_CreateAccount extends BaseClass{
 		String verify = mp.verifyUniversalMsg();
 		
 		Assert.assertEquals(verify, "Thank you for registering with Model Railways Direct Ltd.");
+		Reusable_Screenshots.Screenshots("TC007_CreateAccount");
 		
 		
 	}

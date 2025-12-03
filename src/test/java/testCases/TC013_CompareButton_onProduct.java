@@ -8,6 +8,7 @@ import pageObjects.MyAccPage;
 import pageObjects.ProductDetailPage;
 import pageObjects.ProductListingPage;
 import testBase.BaseClass;
+import utilities.Reusable_Screenshots;
 
 public class TC013_CompareButton_onProduct extends BaseClass{
 	
@@ -21,9 +22,7 @@ public class TC013_CompareButton_onProduct extends BaseClass{
 		LoginAndCreateAccPage lg = new LoginAndCreateAccPage();
 		lg.login(p.getProperty("username"), p.getProperty("password"));
 
-		hp.moveOnCategoryScale();
-		hp.moveOnSubCategoryrolling();		
-		hp.clickOnSubCategoryWagon();
+		hp.moveToWagonLoads();
 
 		ProductListingPage pl= new ProductListingPage();
 		pl.clickOnSingleProduct();
@@ -37,7 +36,7 @@ public class TC013_CompareButton_onProduct extends BaseClass{
 		String verify2 = mp.verifyUniversalMsg();
 		
 		Assert.assertEquals(verify2, "You added product BD Large Containers BR Bauxite & BR Crimson to the comparison list.");
-		
+		Reusable_Screenshots.Screenshots("TC013_CompareButton_onProduct");
 	}
 	
 }

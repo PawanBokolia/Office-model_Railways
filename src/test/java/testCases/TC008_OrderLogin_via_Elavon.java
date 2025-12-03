@@ -18,9 +18,7 @@ public class TC008_OrderLogin_via_Elavon extends BaseClass {
 
         HomePage hp = new HomePage();
         hp.acceptCookies();
-        hp.moveOnCategoryScale();
-        hp.moveOnSubCategoryrolling();
-        hp.clickOnSubCategoryWagon();
+        hp.moveToWagonLoads();
         
         logger.info("step1 ");
         ProductListingPage pl = new ProductListingPage();

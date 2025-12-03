@@ -1,13 +1,12 @@
 package pageObjects;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class CartPage extends BasePage {
 
 	
-	JavascriptExecutor js = (JavascriptExecutor) driver;
+	
 
 	public CartPage()
 	{
@@ -45,7 +44,7 @@ public class CartPage extends BasePage {
 	
 	public String checkQuantity()
 	{
-		wait.elementPresent(quantity);
+		wait.elementVisible(quantity);
 		return quantity.getDomAttribute("value");
 	}
 
