@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pageObjects.AboutUsPage;
 import pageObjects.HomePage;
 import testBase.BaseClass;
+import utilities.Reusable_Screenshots;
 
 public class TC004_AboutUs extends BaseClass{
 	
@@ -22,7 +23,7 @@ public class TC004_AboutUs extends BaseClass{
 		String verifypage = ap.verifyAboutusTitle();
 		
 		Assert.assertEquals(verifypage, "About Us");
-		
+		Reusable_Screenshots.Screenshots("TC004_AboutUs");
 	}
 
 }

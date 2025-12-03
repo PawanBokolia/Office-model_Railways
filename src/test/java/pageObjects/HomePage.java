@@ -2,7 +2,6 @@ package pageObjects;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
@@ -10,7 +9,7 @@ public class HomePage extends BasePage{
 
 
 	JavascriptExecutor js = (JavascriptExecutor) driver;
-	Actions act = new Actions(driver);
+	
 
 	public HomePage()
 	{
@@ -22,18 +21,20 @@ public class HomePage extends BasePage{
 	@FindBy(css="button[id='btn-cookie-allow']")
 	WebElement cookies;
 
-
+	
+	//login button
 	@FindBy(xpath="//div[@class='panel header']//li[@data-label='or']//a")
 	WebElement loginsection;
-
-
-
-	@FindBy(xpath="//li[@class='customer-welcome active']//div[@class='customer-menu']//li[3]")
+	
+	//signout button
+	@FindBy(xpath="//div[@aria-hidden='false']//a[normalize-space()='Sign Out']")
 	WebElement signOutbtn;
 
 	@FindBy(xpath="//span[@class='base']")
 	WebElement signOutMessage;
 
+	
+	//newsLetter
 	@FindBy(id="newsletter")
 	WebElement newsLetter;
 
@@ -43,6 +44,8 @@ public class HomePage extends BasePage{
 	@FindBy(css="a[class='mega first has-child dynamic-width style-tabs active']")
 	WebElement newsVerificationMsg;
 
+	
+	//contact us
 	@FindBy(linkText="Contact us")
 	WebElement contactUslink;
 
@@ -65,10 +68,10 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//a[@class='action showcart']")
 	WebElement minicartbtn;
 
-
 	@FindBy(xpath="//a[@class='action viewcart']")
 	WebElement miniCartCartBtn;
 	
+
 	//Search
 	@FindBy(id="search")
 	WebElement searchBar;
@@ -113,6 +116,8 @@ public class HomePage extends BasePage{
 		return signOutMessage.getText();
 	}
 
+	
+	//newsletter
 	public void newsletterInput(String email )
 	{
 		newsLetter.sendKeys(email);
@@ -128,35 +133,31 @@ public class HomePage extends BasePage{
 		return newsVerificationMsg.getText();
 	}
 
+	
+	//contact us 
 	public void clickOnContUS()
 	{
 		js.executeScript("arguments[0].click();", contactUslink);
 	}
 
+	
+	//about us 
 	public void clickOnAboutUs()
 	{
 		js.executeScript("arguments[0].click();",aboutusBTN);
 	}
 
-	public void moveOnCategoryScale()
+	//category
+	public void moveToWagonLoads()
 	{
-		wait.elementPresent(categoryScale);
-		act.moveToElement(categoryScale).perform();
-	}
-
-	public void moveOnSubCategoryrolling()
-	{
-		wait.elementPresent(subCategoryRolling);
-		act.moveToElement(subCategoryRolling).perform();
-		
-	}
-
-	public void clickOnSubCategoryWagon()
-	{
+		wait.elementVisible(categoryScale);
+		act.mouseHover(categoryScale);
+		wait.elementVisible(subCategoryRolling);
+		act.mouseHover(subCategoryRolling);
 		wait.elementClickable(subCategoryWagon);
-//		js.executeScript("arguments[0].click();", subCategoryWagon);
 	}
 
+	
 	
 	//mini cart
 	public void clickOnMiniCartBtn()
@@ -174,7 +175,7 @@ public class HomePage extends BasePage{
 
 	public boolean verifySearchResult()
 	{
-		wait.elementPresent(searchResult);
+		wait.elementVisible(searchResult);
 		return searchResult.isDisplayed();
 	}
 

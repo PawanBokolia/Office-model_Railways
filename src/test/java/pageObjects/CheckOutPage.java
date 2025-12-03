@@ -1,19 +1,14 @@
 package pageObjects;
 
 
-import java.time.Duration;
 import java.util.List;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CheckOutPage extends BasePage {
 
-    JavascriptExecutor js = (JavascriptExecutor) driver;
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+   
 
     public CheckOutPage()
     {
@@ -130,7 +125,7 @@ public class CheckOutPage extends BasePage {
     }
 
     public void selectElavonOption() {
-        wait.until(ExpectedConditions.elementToBeClickable(elavonPayment));
+        wait.elementClickable(elavonPayment);
         elavonPayment.click();
     }
 
@@ -141,7 +136,7 @@ public class CheckOutPage extends BasePage {
     //paypal
     public void selectPayPalRadioBtn()
     {
-      js.executeScript("arguments[0].click();",paypalRadioBox);
+      js.jsClick(paypalRadioBox);
     }
 
     public void clickOnPayPalLink()
@@ -179,7 +174,7 @@ public class CheckOutPage extends BasePage {
     }
 
     public String orderConfirmMsg() {
-        wait.until(ExpectedConditions.visibilityOf(orderConfMsg));
+        wait.elementVisible(orderConfMsg);
         return orderConfMsg.getText();
     }
     public void selectAddressResult()

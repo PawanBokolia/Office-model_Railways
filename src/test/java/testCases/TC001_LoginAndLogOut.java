@@ -8,6 +8,7 @@ import pageObjects.LoginAndCreateAccPage;
 import pageObjects.MyAccPage;
 import testBase.BaseClass;
 import utilities.Reusable_RetryAnalyzer;
+import utilities.Reusable_Screenshots;
 
 public class TC001_LoginAndLogOut extends BaseClass{
 
@@ -20,12 +21,11 @@ public class TC001_LoginAndLogOut extends BaseClass{
 			hp.clickOnSignInbtn();
 
 			LoginAndCreateAccPage lg = new LoginAndCreateAccPage();
-			lg.enterEmailField("pawan.bokoliaqa@gmail.com");
-			lg.enterPassword("Pawanbokolia@95");
-			lg.clickOnLoginBtn();
-
-			Thread.sleep(3000);
+			lg.login(p.getProperty("username"), p.getProperty("password"));
 			
+			Reusable_Screenshots.Screenshots("TC001_Login");
+			
+			Thread.sleep(3000);
 			MyAccPage mp =new MyAccPage();
 
 			mp.clickonloginmenu();
@@ -35,6 +35,7 @@ public class TC001_LoginAndLogOut extends BaseClass{
 			String text2 = hp.verifySignOut();
 
 			Assert.assertEquals(text2, "You are signed out");
+			Reusable_Screenshots.Screenshots("TC001_Logout");
 		}
 
 

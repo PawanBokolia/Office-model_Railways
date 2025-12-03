@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import pageObjects.HomePage;
 import testBase.BaseClass;
+import utilities.Reusable_Screenshots;
 
 public class TC015_SearchFuctionalty extends BaseClass{
 	
@@ -24,7 +25,7 @@ public class TC015_SearchFuctionalty extends BaseClass{
 		
 		String skuValue = hp.verifySkuInSearch();
 		Assert.assertEquals(skuValue,"36-004A");
-		
+		Reusable_Screenshots.Screenshots("TC015_SearchFuctionalty");
 	
 		
 	}

@@ -32,7 +32,7 @@
 																				-->																	
 		
 	
-		<class name="testCases.TC008_OrderLogin_via_Elavon"/> 
+		<class name="testCases.TC016_ChangePassword"/> 
 		
     </classes>
   </test> <!-- Test -->

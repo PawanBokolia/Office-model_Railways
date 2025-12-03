@@ -25,7 +25,7 @@ import utilities.Reusable_MouseKeyboardActions;
 public class BaseClass {
 
 	public Logger logger;
-	Properties p;
+	public Properties p;
 	public Reusable_FakerUtils faker;
 	public Reusable_MouseKeyboardActions act;
 	

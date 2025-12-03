@@ -30,13 +30,17 @@ public class Reusable_waitUtils {
 		}
 	}
 
-
-	public void elementPresent(WebElement locator)   			 //work normally in POM 
+	public void elementWait(WebElement locator)   			//only wait not click
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(locator)); 	 
+	}
+	
+	public void elementVisible(WebElement locator)   				 //work normally in POM 
 	{
 		wait.until(ExpectedConditions.visibilityOf(locator));
 	}
 
-	public void elementStale(WebElement locator)  				//if stale happens multiple time
+	public void elementStaleclick(WebElement locator)  				//if stale happens multiple time
 	{
 		wait.until(ExpectedConditions.refreshed((ExpectedConditions.elementToBeClickable(locator)))).click();
 	}

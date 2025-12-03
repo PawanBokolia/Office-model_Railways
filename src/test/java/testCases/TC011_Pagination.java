@@ -16,10 +16,7 @@ public class TC011_Pagination extends BaseClass{
 		try {
 			HomePage hp = new HomePage();		
 			hp.acceptCookies();
-			hp.moveOnCategoryScale();
-			hp.moveOnSubCategoryrolling();		
-			hp.clickOnSubCategoryWagon();
-
+			hp.moveToWagonLoads();
 			ProductListingPage pl= new ProductListingPage();
 			
 			while(a<5)

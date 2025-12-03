@@ -9,6 +9,7 @@ import pageObjects.MyAccPage;
 import pageObjects.ProductDetailPage;
 import pageObjects.ProductListingPage;
 import testBase.BaseClass;
+import utilities.Reusable_Screenshots;
 
 public class TC012_WishListBTn_onProduct extends BaseClass{
 
@@ -20,13 +21,9 @@ public class TC012_WishListBTn_onProduct extends BaseClass{
 			hp.clickOnSignInbtn();
 			
 			LoginAndCreateAccPage lg = new LoginAndCreateAccPage();
-			lg.enterEmailField("pawan.bokoliaqa@gmail.com");
-			lg.enterPassword("Pawanbokolia@95");
-			lg.clickOnLoginBtn();
+			lg.login(p.getProperty("username"), p.getProperty("password"));
 			
-			hp.moveOnCategoryScale();
-			hp.moveOnSubCategoryrolling();		
-			hp.clickOnSubCategoryWagon();
+			hp.moveToWagonLoads();
 			
 			ProductListingPage pl= new ProductListingPage();
 			pl.clickOnSingleProduct();
@@ -38,6 +35,6 @@ public class TC012_WishListBTn_onProduct extends BaseClass{
 			MyAccPage mp = new MyAccPage();
 			String  verify = mp.verifyUniversalMsg();
 			Assert.assertEquals(verify,"BD Large Containers BR Bauxite & BR Crimson has been added to your Wish List. Click here to continue shopping.");
-
+			Reusable_Screenshots.Screenshots("TC012_WishListBTn_onProduct");
 	}
 }

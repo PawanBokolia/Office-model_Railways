@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pageObjects.ContactUsPage;
 import pageObjects.HomePage;
 import testBase.BaseClass;
+import utilities.Reusable_Screenshots;
 
 public class TC003_ContactUs extends BaseClass {
 
@@ -30,6 +31,7 @@ public class TC003_ContactUs extends BaseClass {
 		Thread.sleep(3000);
 		String verify = cnt.VerificationValid();
 		Assert.assertEquals(verify, "Thanks for contacting us with your comments and questions. We'll respond to you very soon.");
+		Reusable_Screenshots.Screenshots("TC003_ContactUs");
 		
 	}
 	

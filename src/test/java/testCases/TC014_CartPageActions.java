@@ -8,6 +8,7 @@ import pageObjects.HomePage;
 import pageObjects.ProductDetailPage;
 import pageObjects.ProductListingPage;
 import testBase.BaseClass;
+import utilities.Reusable_Screenshots;
 
 public class TC014_CartPageActions extends BaseClass{
 
@@ -16,10 +17,7 @@ public class TC014_CartPageActions extends BaseClass{
 	{
 		HomePage hp = new HomePage();		
 		hp.acceptCookies();
-		hp.moveOnCategoryScale();
-		hp.moveOnSubCategoryrolling();		
-		hp.clickOnSubCategoryWagon();
-
+		hp.moveToWagonLoads();
 
 		ProductListingPage pl= new ProductListingPage();
 		pl.clickOnSingleProduct();
@@ -29,17 +27,20 @@ public class TC014_CartPageActions extends BaseClass{
 
 		Thread.sleep(4000);
 		hp.clickOnMiniCartBtn();
-		
+		Reusable_Screenshots.Screenshots("TC014_CartPageQuntity");
+
 		CartPage cp = new CartPage();
 		cp.changeProQuantity("5");
 		cp.clickOnUpdateCartBtn();
 		
+
 		Thread.sleep(3000);
 		String value = cp.checkQuantity();
 		Assert.assertEquals(value , "5");
-		
-		
-		
-		
+		Reusable_Screenshots.Screenshots("TC014_AfterUpdationCartPage");
+
+
+
+
 	}
 }
